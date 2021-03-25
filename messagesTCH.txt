@@ -16,6 +16,9 @@
 71,@RProcess [%d - %s] has generated an exception and is terminating@@\n
 72,@RProcess [%d - %s] has the processor assigned@@\n
 73,@RProcess [%d - %s] has requested to terminate@@\n
+74,Running Process Information:\n\t\t[PID: @G%d@@, Priority: %d, WakeUp: @R%d@@, Queue: %s]\n
+75,[@G%d@@, %d, @R%d@@]
+76,\t\tPID: @G%d@@ -> %s\n
 
 // Assert system messages
 81,Using asserts file: %s\nMaximum number of asserts: %d\n
@@ -33,10 +36,11 @@
 93,@MAssert warning. Unchecked assert @@(Time: %d, Element: %s)\n
 
 // Time
-97,New Tick (%d)\n
+94,[%d] 
+95,[@R%d@@] 
+
 
 // Formating and generic messages without parameters
 99,@R%s@@
 100,%s
-
 

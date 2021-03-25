@@ -9,6 +9,7 @@
 #include "OperatingSystemBase.h"
 #include "Messages.h"
 #include "Asserts.h"
+#include "Clock.h"
 
 // Functions prototypes
 
@@ -22,6 +23,8 @@ char defaultDebugLevel[]="A";
 char *debugLevel=defaultDebugLevel;
 
 int endSimulationTime=-1; // For end simulation forced by time
+
+int intervalBetweenInterrupts = DEFAULT_INTERVAL_BETWEEN_INTERRUPTS; // Default value
 
 // Only one colour messages. Set to 1 for more colours checking uppercase in debugLevel
 int COLOURED = 0 ;
@@ -197,3 +200,8 @@ void ComputerSystem_DebugMessage(int msgNo, char section, ...) {
 	    printf("%c[%dm", 0x1B, 0);
 } // ComputerSystem_DebugMessage()
 
+// Función equivalente a OperationgSystem_ShowTime en ComputerSystem
+// No tabula al principio
+void ComputerSystem_ShowTime(char section) {
+      ComputerSystem_DebugMessage(Processor_PSW_BitState(EXECUTION_MODE_BIT)?95:94,section,Clock_GetTime());
+}

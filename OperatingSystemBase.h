@@ -15,5 +15,18 @@ void OperatingSystem_ReadyToShutdown();
 void OperatingSystem_TerminatingSIP();
 void OperatingSystem_PrepareDaemons(int);
 int OperatingSystem_PrepareTeachersDaemons(int);
+void OperatingSystem_ShowTime(char);
+void OperatingSystem_PrintStatus();
+void OperatingSystem_PrintReadyToRunQueue();
+void OperatingSystem_PrepareDaemons(int);
+int OperatingSystem_PrepareTeachersDaemons(int);
+
+#ifdef SLEEPINGQUEUE
+extern heapItem sleepingProcessesQueue[];
+extern int numberOfSleepingProcesses; 
+#endif
+
+// Begin indes for daemons in programList
+// extern int baseDaemonsInProgramList; 
 
 #endif

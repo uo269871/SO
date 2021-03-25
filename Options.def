@@ -6,3 +6,4 @@ OPTION(messagesSTDFile,"messagesSTD.txt")	// 5
 OPTION(debugSections,"A")					// 6
 OPTION(generateAsserts,"No value")			// 7
 OPTION(help,"No value")						// 8
+OPTION(intervalBetweenInterrupts,"5")		// 9
