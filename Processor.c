@@ -62,10 +62,12 @@ int Processor_FetchInstruction() {
 		// Show message: operationCode operand1 operand2
 		char codedInstruction[13]; // Coded instruction with separated fields to show
 		Processor_GetCodedInstruction(codedInstruction,registerIR_CPU);
+		ComputerSystem_ShowTime(HARDWARE);
 		ComputerSystem_DebugMessage(68, HARDWARE, codedInstruction);
 	}
 	else {
 		// Show message: "_ _ _ "
+		ComputerSystem_ShowTime(HARDWARE);
 		ComputerSystem_DebugMessage(100,HARDWARE,"_ _ _\n");
 		return CPU_FAIL;
 	}
