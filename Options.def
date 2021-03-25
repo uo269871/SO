@@ -1,0 +1,8 @@
+OPTION(initialPID,"0") 						// 1
+OPTION(endSimulationTime,"-1")				// 2
+OPTION(numAsserts,"500")					// 3
+OPTION(assertsFile,"asserts")				// 4
+OPTION(messagesSTDFile,"messagesSTD.txt")	// 5
+OPTION(debugSections,"A")					// 6
+OPTION(generateAsserts,"No value")			// 7
+OPTION(help,"No value")						// 8
