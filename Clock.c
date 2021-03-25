@@ -9,6 +9,11 @@ void Clock_Update() {
 
 	tics++;
     // ComputerSystem_DebugMessage(97,CLOCK,tics);
+	if(tics % intervalBetweenInterrupts == 0){
+		//char * a = "Interrupcion de reloj\n";
+		//printf(a);
+		Processor_RaiseInterrupt(CLOCKINT_BIT);
+	}
 
 }
 

@@ -25,6 +25,7 @@ int OperatingSystem_ExtractFromReadyToRun(int);
 void OperatingSystem_HandleException();
 void OperatingSystem_HandleSystemCall();
 void OperatingSystem_PrintReadyToRunQueue();
+void OperatingSystem_HandleClockInterrupt();
 
 // The process table
 PCB processTable[PROCESSTABLEMAXSIZE];
@@ -470,6 +471,9 @@ void OperatingSystem_InterruptLogic(int entryPoint){
 		case EXCEPTION_BIT: // EXCEPTION_BIT=6
 			OperatingSystem_HandleException();
 			break;
+		case CLOCKINT_BIT:
+			OperatingSystem_HandleClockInterrupt();
+			break;
 	}
 
 }
@@ -508,3 +512,5 @@ void OperatingSystem_PrintReadyToRunQueue(){
 	}
 	
 }
+
+void OperatingSystem_HandleClockInterrupt(){ return; } 
