@@ -252,11 +252,8 @@ void Processor_DecodeAndExecuteInstruction() {
 // Hardware interrupt processing
 void Processor_ManageInterrupts() {
 	
-	if(Processor_PSW_BitState(INTERRUPT_MASKED_BIT)){
-		return;
-	}
-
-	int i;
+	if(!Processor_PSW_BitState(INTERRUPT_MASKED_BIT)){
+		int i;
 
 		for (i=0;i<INTERRUPTTYPES;i++)
 			// If an 'i'-type interrupt is pending
@@ -273,6 +270,7 @@ void Processor_ManageInterrupts() {
 				registerPC_CPU=interruptVectorTable[i];
 				break; // Don't process another interrupt
 			}
+	}
 }
 
 char * Processor_ShowPSW(){

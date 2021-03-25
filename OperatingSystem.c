@@ -54,7 +54,7 @@ char * queueNames [NUMBEROFQUEUES]={"USER","DAEMONS"};
 int numberOfNotTerminatedUserProcesses=0;
 
 char * statesNames [5]={"NEW","READY","EXECUTING","BLOCKED","EXIT"};
-
+int numberOfClockInterrupts=0;
 
 // Initial set of tasks of the OS
 void OperatingSystem_Initialize(int daemonsIndex) {
@@ -513,4 +513,8 @@ void OperatingSystem_PrintReadyToRunQueue(){
 	
 }
 
-void OperatingSystem_HandleClockInterrupt(){ return; } 
+void OperatingSystem_HandleClockInterrupt(){
+	numberOfClockInterrupts++;
+	OperatingSystem_ShowTime(INTERRUPT);
+	ComputerSystem_DebugMessage(120,INTERRUPT,numberOfClockInterrupts);
+} 
