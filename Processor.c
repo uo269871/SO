@@ -41,6 +41,7 @@ void Processor_InitializeInterruptVectorTable(int interruptVectorInitialAddress)
 
 	interruptVectorTable[SYSCALL_BIT]=interruptVectorInitialAddress;  // SYSCALL_BIT=2
 	interruptVectorTable[EXCEPTION_BIT]=interruptVectorInitialAddress+2; // EXCEPTION_BIT=6
+	interruptVectorTable[CLOCKINT_BIT]=interruptVectorInitialAddress+4;
 }
 
 // Fetch an instruction from main memory and put it in the IR register
@@ -206,8 +207,16 @@ void Processor_DecodeAndExecuteInstruction() {
 				Processor_RaiseInterrupt(EXCEPTION_BIT);
 			}
 			break; // Note: message show before... for operating system messages after...
-
-		// Instruction MEMADD
+		// Instruction IRET
+		case IRET_INST: // Return from a interrupt handle manager call
+			if(Processor_PSW_BitState(EXECUTION_MODE_BIT) == 1){
+				registerPC_CPU=Processor_CopyFromSystemStack(MAINMEMORYSIZE-1);
+				registerPSW_CPU=Processor_CopyFromSystemStack(MAINMEMORYSIZE-2);
+			} else{
+				Processor_RaiseInterrupt(EXCEPTION_BIT);
+			}
+			break;	
+			// Instruction MEMADD	
 		case MEMADD_INST:
 			// Tell the main memory controller from where
 			registerMAR_CPU=operand2;
@@ -223,16 +232,6 @@ void Processor_DecodeAndExecuteInstruction() {
 			registerAccumulator_CPU+= operand1;
 			registerPC_CPU++;
 			break;
-		// Instruction IRET
-		case IRET_INST: // Return from a interrupt handle manager call
-			if(Processor_PSW_BitState(EXECUTION_MODE_BIT) == 1){
-				registerPC_CPU=Processor_CopyFromSystemStack(MAINMEMORYSIZE-1);
-				registerPSW_CPU=Processor_CopyFromSystemStack(MAINMEMORYSIZE-2);
-			} else{
-				Processor_RaiseInterrupt(EXCEPTION_BIT);
-			}
-			break;		
-
 		// Unknown instruction
 		default : 
 			operationCode=NONEXISTING_INST;
@@ -252,7 +251,9 @@ void Processor_DecodeAndExecuteInstruction() {
 // Hardware interrupt processing
 void Processor_ManageInterrupts() {
 	
-	if(!Processor_PSW_BitState(INTERRUPT_MASKED_BIT)){
+	if(Processor_PSW_BitState(INTERRUPT_MASKED_BIT)){
+		return;
+	}
 		int i;
 
 		for (i=0;i<INTERRUPTTYPES;i++)
@@ -270,7 +271,7 @@ void Processor_ManageInterrupts() {
 				registerPC_CPU=interruptVectorTable[i];
 				break; // Don't process another interrupt
 			}
-	}
+	
 }
 
 char * Processor_ShowPSW(){

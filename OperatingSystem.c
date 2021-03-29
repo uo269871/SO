@@ -337,12 +337,10 @@ void OperatingSystem_RestoreContext(int PID) {
 	// New values for the CPU registers are obtained from the PCB
 	Processor_CopyInSystemStack(MAINMEMORYSIZE-1,processTable[PID].copyOfPCRegister);
 	Processor_CopyInSystemStack(MAINMEMORYSIZE-2,processTable[PID].copyOfPSWRegister);
-	
+	Processor_SetAccumulator(processTable[PID].accumulator);
 	// Same thing for the MMU registers
 	MMU_SetBase(processTable[PID].initialPhysicalAddress);
-	MMU_SetLimit(processTable[PID].processSize);
-
-	Processor_SetAccumulator(processTable[PID].accumulator);
+	MMU_SetLimit(processTable[PID].processSize);	
 }
 
 

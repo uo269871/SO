@@ -6,4 +6,6 @@ OS 2 // SysCall Interrupt
 IRET
 OS 6 // Exception Interrupt
 IRET
+OS 9
+IRET
 
