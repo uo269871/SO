@@ -26,6 +26,7 @@ void OperatingSystem_HandleException();
 void OperatingSystem_HandleSystemCall();
 void OperatingSystem_PrintReadyToRunQueue();
 void OperatingSystem_HandleClockInterrupt();
+void OperatingSystem_MoveToTheBLOCKEDState(int);
 
 // The process table
 PCB processTable[PROCESSTABLEMAXSIZE];
@@ -55,6 +56,10 @@ int numberOfNotTerminatedUserProcesses=0;
 
 char * statesNames [5]={"NEW","READY","EXECUTING","BLOCKED","EXIT"};
 int numberOfClockInterrupts=0;
+
+// Heap with blocked processes sort by when to wakeup
+heapItem sleepingProcessesQueue[PROCESSTABLEMAXSIZE];
+int numberOfSleepingProcesses=0;
 
 // Initial set of tasks of the OS
 void OperatingSystem_Initialize(int daemonsIndex) {
@@ -457,6 +462,12 @@ void OperatingSystem_HandleSystemCall() {
 				}
 			}
 			break;
+		case SYSCALL_SLEEP:
+			OperatingSystem_SaveContext(executingProcessID);
+			OperatingSystem_MoveToTheBLOCKEDState(executingProcessID);
+			// OperatingSystem_PreemptRunningProcess();
+			OperatingSystem_PrintStatus();
+			break;
 	}
 }
 	
@@ -515,4 +526,32 @@ void OperatingSystem_HandleClockInterrupt(){
 	numberOfClockInterrupts++;
 	OperatingSystem_ShowTime(INTERRUPT);
 	ComputerSystem_DebugMessage(120,INTERRUPT,numberOfClockInterrupts);
+
+	int wokenUpProcesses, selProcess;	
+	wokenUpProcesses = 0;
+
+	while (numberOfSleepingProcesses > 0 && processTable[Heap_getFirst(sleepingProcessesQueue,numberOfSleepingProcesses)].whenToWakeUp == numberOfClockInterrupts){
+		selProcess = Heap_poll(sleepingProcessesQueue,QUEUE_WAKEUP,&numberOfSleepingProcesses);
+		OperatingSystem_MoveToTheREADYState(selProcess);
+		wokenUpProcesses++;
+	}
+
+	if(wokenUpProcesses > 0){
+		OperatingSystem_PrintStatus();
+	}
 } 
+
+void OperatingSystem_MoveToTheBLOCKEDState(int PID) {
+	int plIndex, state;
+	plIndex = processTable[PID].programListIndex;
+	int val = abs(Processor_GetAccumulator()) + numberOfClockInterrupts + 1;
+	processTable[PID].whenToWakeUp = val;
+
+	if (Heap_add(PID, sleepingProcessesQueue,QUEUE_PRIORITY ,&numberOfSleepingProcesses,PROCESSTABLEMAXSIZE)>=0) {
+		char* name = programList[plIndex]->executableName;
+		state =processTable[PID].state;
+		processTable[PID].state=BLOCKED;
+		OperatingSystem_ShowTime(SYSPROC);
+		ComputerSystem_DebugMessage(110,SYSPROC,PID,name,statesNames[state],statesNames[BLOCKED]);
+	}
+}

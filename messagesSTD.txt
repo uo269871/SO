@@ -16,4 +16,4 @@
 112,Ready-to-Run processes queues:\n
 113,\t\t%s:%s
 115,Process [@G%d – %s@@] will transfer the control of the processor to process [@G%d – %s@@]\n
-120,@CClock interrupt number[%d] has ocurred@@\n
+120,@CClock interrupt number [%d] has ocurred@@\n

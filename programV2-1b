@@ -1,6 +1,7 @@
 55 
 33
 ADD 2 0
+TRAP 7
 INC -1
 TRAP 4
 ZJUMP 2
