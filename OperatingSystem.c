@@ -465,7 +465,6 @@ void OperatingSystem_HandleSystemCall() {
 		case SYSCALL_SLEEP:
 			OperatingSystem_SaveContext(executingProcessID);
 			OperatingSystem_MoveToTheBLOCKEDState(executingProcessID);
-			// OperatingSystem_PreemptRunningProcess();
 			OperatingSystem_Dispatch(OperatingSystem_ShortTermScheduler());
 			OperatingSystem_PrintStatus();
 			break;
@@ -539,6 +538,19 @@ void OperatingSystem_HandleClockInterrupt(){
 
 	if(wokenUpProcesses > 0){
 		OperatingSystem_PrintStatus();
+		selProcess = OperatingSystem_ShortTermScheduler();
+		if (processTable[selProcess].priority < processTable[executingProcessID].priority){
+			OperatingSystem_ShowTime(SHORTTERMSCHEDULE);
+			ComputerSystem_DebugMessage(121, SHORTTERMSCHEDULE,
+				executingProcessID,programList[processTable[executingProcessID].programListIndex]->executableName,
+				selProcess,programList[processTable[selProcess].programListIndex]->executableName);
+			OperatingSystem_PreemptRunningProcess();
+			OperatingSystem_Dispatch(selProcess);
+			OperatingSystem_PrintStatus();
+		} else {
+			Heap_add(selProcess, readyToRunQueue[processTable[selProcess].queueID],QUEUE_PRIORITY,
+					&numberOfReadyToRunProcesses[processTable[selProcess].queueID],PROCESSTABLEMAXSIZE);
+		}
 	}
 } 
 
