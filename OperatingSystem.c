@@ -286,7 +286,7 @@ void OperatingSystem_MoveToTheREADYState(int PID) {
 		processTable[PID].state=READY;
 		OperatingSystem_ShowTime(SYSPROC);
 		ComputerSystem_DebugMessage(110,SYSPROC,PID,name,statesNames[state],statesNames[READY]);
-		OperatingSystem_PrintReadyToRunQueue(); 
+		// OperatingSystem_PrintReadyToRunQueue(); 
 	}
 }
 
