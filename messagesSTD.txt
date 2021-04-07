@@ -14,5 +14,7 @@
 110,Process [@G%d - %s@@] moving from the [@G%s@@] state to the [@G%s@@] state\n
 111,New process [@G%d - %s@@] moving to the [@GNEW@@] state\n
 112,Ready-to-Run processes queues:\n
-113,\t%s:%s
+113,\t\t%s:%s
 115,Process [@G%d – %s@@] will transfer the control of the processor to process [@G%d – %s@@]\n
+120,@CClock interrupt number [%d] has ocurred@@\n
+121,Process [@G%d – %s@@] will be thrown out of the processor by process [@G%d – %s@@]\n

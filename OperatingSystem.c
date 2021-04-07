@@ -25,6 +25,8 @@ int OperatingSystem_ExtractFromReadyToRun(int);
 void OperatingSystem_HandleException();
 void OperatingSystem_HandleSystemCall();
 void OperatingSystem_PrintReadyToRunQueue();
+void OperatingSystem_HandleClockInterrupt();
+void OperatingSystem_MoveToTheBLOCKEDState(int);
 
 // The process table
 PCB processTable[PROCESSTABLEMAXSIZE];
@@ -53,7 +55,11 @@ char * queueNames [NUMBEROFQUEUES]={"USER","DAEMONS"};
 int numberOfNotTerminatedUserProcesses=0;
 
 char * statesNames [5]={"NEW","READY","EXECUTING","BLOCKED","EXIT"};
+int numberOfClockInterrupts=0;
 
+// Heap with blocked processes sort by when to wakeup
+heapItem sleepingProcessesQueue[PROCESSTABLEMAXSIZE];
+int numberOfSleepingProcesses=0;
 
 // Initial set of tasks of the OS
 void OperatingSystem_Initialize(int daemonsIndex) {
@@ -63,6 +69,7 @@ void OperatingSystem_Initialize(int daemonsIndex) {
 	programFile=fopen("OperatingSystemCode", "r");
 	if (programFile==NULL){
 		// Show red message "FATAL ERROR: Missing Operating System!\n"
+		OperatingSystem_ShowTime(SHUTDOWN);
 		ComputerSystem_DebugMessage(99,SHUTDOWN,"FATAL ERROR: Missing Operating System!\n");
 		exit(1);		
 	}
@@ -92,6 +99,7 @@ void OperatingSystem_Initialize(int daemonsIndex) {
 	
 	if (strcmp(programList[processTable[sipID].programListIndex]->executableName,"SystemIdleProcess")) {
 		// Show red message "FATAL ERROR: Missing SIP program!\n"
+		OperatingSystem_ShowTime(SHUTDOWN);
 		ComputerSystem_DebugMessage(99,SHUTDOWN,"FATAL ERROR: Missing SIP program!\n");
 		exit(1);		
 	}
@@ -135,15 +143,19 @@ int OperatingSystem_LongTermScheduler() {
 		PID=OperatingSystem_CreateProcess(i);
 		switch (PID){
 		case NOFREEENTRY:
+			OperatingSystem_ShowTime(ERROR);
 			ComputerSystem_DebugMessage(103,ERROR, programList[i]->executableName);
 			break;
 		case PROGRAMDOESNOTEXIST:
+			OperatingSystem_ShowTime(ERROR);
 			ComputerSystem_DebugMessage(104, ERROR, programList[i]->executableName,"--- it does not exist ---");
 			break;
 		case PROGRAMNOTVALID:
+			OperatingSystem_ShowTime(ERROR);
 			ComputerSystem_DebugMessage(104, ERROR, programList[i]->executableName,"--- invalid priority or size ---");
 			break;
 		case TOOBIGPROCESS:
+			OperatingSystem_ShowTime(ERROR);
 			ComputerSystem_DebugMessage(105, ERROR, programList[i]->executableName);
 			break;
 		default:
@@ -152,10 +164,13 @@ int OperatingSystem_LongTermScheduler() {
 				numberOfNotTerminatedUserProcesses++;
 			// Move process to the ready state
 			OperatingSystem_MoveToTheREADYState(PID);
+
 			break;
 		}
 	}
 
+	if (numberOfSuccessfullyCreatedProcesses > 0)
+		OperatingSystem_PrintStatus();
 	// Return the number of succesfully created processes
 	return numberOfSuccessfullyCreatedProcesses;
 }
@@ -215,6 +230,7 @@ int OperatingSystem_CreateProcess(int indexOfExecutableProgram) {
 	OperatingSystem_PCBInitialization(PID, loadingPhysicalAddress, processSize, priority, indexOfExecutableProgram);
 	
 	// Show message "Process [PID] created from program [executableName]\n"
+	OperatingSystem_ShowTime(INIT);
 	ComputerSystem_DebugMessage(70,INIT,PID,executableProgram->executableName);
 	
 	return PID;
@@ -252,6 +268,7 @@ void OperatingSystem_PCBInitialization(int PID, int initialPhysicalAddress, int 
 	}
 
 	char* name = programList[processPLIndex]->executableName;
+	OperatingSystem_ShowTime(SYSPROC);
 	ComputerSystem_DebugMessage(111,SYSPROC,PID,name);
 }
 
@@ -267,8 +284,9 @@ void OperatingSystem_MoveToTheREADYState(int PID) {
 		char* name = programList[plIndex]->executableName;
 		state =processTable[PID].state;
 		processTable[PID].state=READY;
+		OperatingSystem_ShowTime(SYSPROC);
 		ComputerSystem_DebugMessage(110,SYSPROC,PID,name,statesNames[state],statesNames[READY]);
-		OperatingSystem_PrintReadyToRunQueue(); 
+		// OperatingSystem_PrintReadyToRunQueue(); 
 	}
 }
 
@@ -313,6 +331,7 @@ void OperatingSystem_Dispatch(int PID) {
 	executingProcessID=PID;
 	// Change the process' state
 	processTable[PID].state=EXECUTING;
+	OperatingSystem_ShowTime(SYSPROC);
 	ComputerSystem_DebugMessage(110,SYSPROC,PID,name,statesNames[state],statesNames[EXECUTING]);
 
 	// Modify hardware registers with appropriate values for the process identified by PID
@@ -326,12 +345,10 @@ void OperatingSystem_RestoreContext(int PID) {
 	// New values for the CPU registers are obtained from the PCB
 	Processor_CopyInSystemStack(MAINMEMORYSIZE-1,processTable[PID].copyOfPCRegister);
 	Processor_CopyInSystemStack(MAINMEMORYSIZE-2,processTable[PID].copyOfPSWRegister);
-	
+	Processor_SetAccumulator(processTable[PID].accumulator);
 	// Same thing for the MMU registers
 	MMU_SetBase(processTable[PID].initialPhysicalAddress);
-	MMU_SetLimit(processTable[PID].processSize);
-
-	Processor_SetAccumulator(processTable[PID].accumulator);
+	MMU_SetLimit(processTable[PID].processSize);	
 }
 
 
@@ -366,9 +383,11 @@ void OperatingSystem_SaveContext(int PID) {
 void OperatingSystem_HandleException() {
   
 	// Show message "Process [executingProcessID] has generated an exception and is terminating\n"
+	OperatingSystem_ShowTime(SYSPROC);
 	ComputerSystem_DebugMessage(71,SYSPROC,executingProcessID,programList[processTable[executingProcessID].programListIndex]->executableName);
 	
 	OperatingSystem_TerminateProcess();
+	OperatingSystem_PrintStatus();
 }
 
 
@@ -383,6 +402,8 @@ void OperatingSystem_TerminateProcess() {
 	state =processTable[executingProcessID].state;
   	
 	processTable[executingProcessID].state=EXIT;
+
+	OperatingSystem_ShowTime(SYSPROC);
 	ComputerSystem_DebugMessage(110,SYSPROC,executingProcessID,name,statesNames[state],statesNames[EXIT]);
 	
 	if (programList[processTable[executingProcessID].programListIndex]->type==USERPROGRAM) 
@@ -393,6 +414,7 @@ void OperatingSystem_TerminateProcess() {
 		if (executingProcessID==sipID) {
 			// finishing sipID, change PC to address of OS HALT instruction
 			OperatingSystem_TerminatingSIP();
+			OperatingSystem_ShowTime(SHUTDOWN);
 			ComputerSystem_DebugMessage(99,SHUTDOWN,"The system will shut down now...\n");
 			return; // Don't dispatch any process
 		}
@@ -418,13 +440,17 @@ void OperatingSystem_HandleSystemCall() {
 		
 		case SYSCALL_PRINTEXECPID:
 			// Show message: "Process [executingProcessID] has the processor assigned\n"
+			OperatingSystem_ShowTime(SYSPROC);
 			ComputerSystem_DebugMessage(72,SYSPROC,executingProcessID,programList[processTable[executingProcessID].programListIndex]->executableName);
+			
 			break;
 
 		case SYSCALL_END:
 			// Show message: "Process [executingProcessID] has requested to terminate\n"
+			OperatingSystem_ShowTime(SYSPROC);
 			ComputerSystem_DebugMessage(73,SYSPROC,executingProcessID,programList[processTable[executingProcessID].programListIndex]->executableName);
 			OperatingSystem_TerminateProcess();
+			OperatingSystem_PrintStatus();
 			break;
 		case SYSCALL_YIELD:;
 			int type;
@@ -432,14 +458,22 @@ void OperatingSystem_HandleSystemCall() {
 			if(numberOfReadyToRunProcesses[type] > 0){
 				int pid2 = Heap_getFirst(readyToRunQueue[type],numberOfReadyToRunProcesses[type]);
 				if(processTable[executingProcessID].priority == processTable[pid2].priority){
+					OperatingSystem_ShowTime(SYSPROC);
 					ComputerSystem_DebugMessage(115,SYSPROC,
 					executingProcessID, programList[processTable[executingProcessID].programListIndex]->executableName,
 					pid2,programList[processTable[pid2].programListIndex]->executableName);
 					OperatingSystem_PreemptRunningProcess();
 					pid2 = OperatingSystem_ExtractFromReadyToRun(type);
 					OperatingSystem_Dispatch(pid2);
+					OperatingSystem_PrintStatus();
 				}
 			}
+			break;
+		case SYSCALL_SLEEP:
+			OperatingSystem_SaveContext(executingProcessID);
+			OperatingSystem_MoveToTheBLOCKEDState(executingProcessID);
+			OperatingSystem_Dispatch(OperatingSystem_ShortTermScheduler());
+			OperatingSystem_PrintStatus();
 			break;
 	}
 }
@@ -453,6 +487,9 @@ void OperatingSystem_InterruptLogic(int entryPoint){
 		case EXCEPTION_BIT: // EXCEPTION_BIT=6
 			OperatingSystem_HandleException();
 			break;
+		case CLOCKINT_BIT:
+			OperatingSystem_HandleClockInterrupt();
+			break;
 	}
 
 }
@@ -462,6 +499,7 @@ void OperatingSystem_PrintReadyToRunQueue(){
 	int i, PID, priority;
 	int size;
 
+	OperatingSystem_ShowTime(SHORTTERMSCHEDULE);
 	ComputerSystem_DebugMessage(112, SHORTTERMSCHEDULE);
 	for (j = 0; j < NUMBEROFQUEUES; j++){
 		size = numberOfReadyToRunProcesses[j];
@@ -489,4 +527,51 @@ void OperatingSystem_PrintReadyToRunQueue(){
 		}
 	}
 	
+}
+
+void OperatingSystem_HandleClockInterrupt(){
+	numberOfClockInterrupts++;
+	OperatingSystem_ShowTime(INTERRUPT);
+	ComputerSystem_DebugMessage(120,INTERRUPT,numberOfClockInterrupts);
+
+	int wokenUpProcesses, selProcess;	
+	wokenUpProcesses = 0;
+
+	while (numberOfSleepingProcesses > 0 && processTable[Heap_getFirst(sleepingProcessesQueue,numberOfSleepingProcesses)].whenToWakeUp == numberOfClockInterrupts){
+		selProcess = Heap_poll(sleepingProcessesQueue,QUEUE_WAKEUP,&numberOfSleepingProcesses);
+		OperatingSystem_MoveToTheREADYState(selProcess);
+		wokenUpProcesses++;
+	}
+
+	if(wokenUpProcesses > 0){
+		OperatingSystem_PrintStatus();
+		selProcess = OperatingSystem_ShortTermScheduler();
+		if (processTable[selProcess].priority < processTable[executingProcessID].priority){
+			OperatingSystem_ShowTime(SHORTTERMSCHEDULE);
+			ComputerSystem_DebugMessage(121, SHORTTERMSCHEDULE,
+				executingProcessID,programList[processTable[executingProcessID].programListIndex]->executableName,
+				selProcess,programList[processTable[selProcess].programListIndex]->executableName);
+			OperatingSystem_PreemptRunningProcess();
+			OperatingSystem_Dispatch(selProcess);
+			OperatingSystem_PrintStatus();
+		} else {
+			Heap_add(selProcess, readyToRunQueue[processTable[selProcess].queueID],QUEUE_PRIORITY,
+					&numberOfReadyToRunProcesses[processTable[selProcess].queueID],PROCESSTABLEMAXSIZE);
+		}
+	}
+} 
+
+void OperatingSystem_MoveToTheBLOCKEDState(int PID) {
+	int plIndex, state;
+	plIndex = processTable[PID].programListIndex;
+	int val = abs(Processor_GetAccumulator()) + numberOfClockInterrupts + 1;
+	processTable[PID].whenToWakeUp = val;
+
+	if (Heap_add(PID, sleepingProcessesQueue,QUEUE_PRIORITY ,&numberOfSleepingProcesses,PROCESSTABLEMAXSIZE)>=0) {
+		char* name = programList[plIndex]->executableName;
+		state =processTable[PID].state;
+		processTable[PID].state=BLOCKED;
+		OperatingSystem_ShowTime(SYSPROC);
+		ComputerSystem_DebugMessage(110,SYSPROC,PID,name,statesNames[state],statesNames[BLOCKED]);
+	}
 }
