@@ -466,6 +466,7 @@ void OperatingSystem_HandleSystemCall() {
 			OperatingSystem_SaveContext(executingProcessID);
 			OperatingSystem_MoveToTheBLOCKEDState(executingProcessID);
 			// OperatingSystem_PreemptRunningProcess();
+			OperatingSystem_Dispatch(OperatingSystem_ShortTermScheduler());
 			OperatingSystem_PrintStatus();
 			break;
 	}
