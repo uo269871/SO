@@ -164,10 +164,13 @@ int OperatingSystem_LongTermScheduler() {
 				numberOfNotTerminatedUserProcesses++;
 			// Move process to the ready state
 			OperatingSystem_MoveToTheREADYState(PID);
+
 			break;
 		}
 	}
 
+	if (numberOfSuccessfullyCreatedProcesses > 0)
+		OperatingSystem_PrintStatus();
 	// Return the number of succesfully created processes
 	return numberOfSuccessfullyCreatedProcesses;
 }
@@ -384,6 +387,7 @@ void OperatingSystem_HandleException() {
 	ComputerSystem_DebugMessage(71,SYSPROC,executingProcessID,programList[processTable[executingProcessID].programListIndex]->executableName);
 	
 	OperatingSystem_TerminateProcess();
+	OperatingSystem_PrintStatus();
 }
 
 
@@ -438,6 +442,7 @@ void OperatingSystem_HandleSystemCall() {
 			// Show message: "Process [executingProcessID] has the processor assigned\n"
 			OperatingSystem_ShowTime(SYSPROC);
 			ComputerSystem_DebugMessage(72,SYSPROC,executingProcessID,programList[processTable[executingProcessID].programListIndex]->executableName);
+			
 			break;
 
 		case SYSCALL_END:
@@ -445,6 +450,7 @@ void OperatingSystem_HandleSystemCall() {
 			OperatingSystem_ShowTime(SYSPROC);
 			ComputerSystem_DebugMessage(73,SYSPROC,executingProcessID,programList[processTable[executingProcessID].programListIndex]->executableName);
 			OperatingSystem_TerminateProcess();
+			OperatingSystem_PrintStatus();
 			break;
 		case SYSCALL_YIELD:;
 			int type;
@@ -459,6 +465,7 @@ void OperatingSystem_HandleSystemCall() {
 					OperatingSystem_PreemptRunningProcess();
 					pid2 = OperatingSystem_ExtractFromReadyToRun(type);
 					OperatingSystem_Dispatch(pid2);
+					OperatingSystem_PrintStatus();
 				}
 			}
 			break;
