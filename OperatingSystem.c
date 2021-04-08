@@ -27,6 +27,7 @@ void OperatingSystem_HandleSystemCall();
 void OperatingSystem_PrintReadyToRunQueue();
 void OperatingSystem_HandleClockInterrupt();
 void OperatingSystem_MoveToTheBLOCKEDState(int);
+int OperatingSystem_IsMoreImportant(int, int);
 
 // The process table
 PCB processTable[PROCESSTABLEMAXSIZE];
@@ -548,7 +549,7 @@ void OperatingSystem_HandleClockInterrupt(){
 	if(wokenUpProcesses > 0){
 		OperatingSystem_PrintStatus();
 		selProcess = OperatingSystem_ShortTermScheduler();
-		if (processTable[selProcess].priority < processTable[executingProcessID].priority){
+		if (OperatingSystem_IsMoreImportant(selProcess,executingProcessID)){
 			OperatingSystem_ShowTime(SHORTTERMSCHEDULE);
 			ComputerSystem_DebugMessage(121, SHORTTERMSCHEDULE,
 				executingProcessID,programList[processTable[executingProcessID].programListIndex]->executableName,
@@ -562,6 +563,18 @@ void OperatingSystem_HandleClockInterrupt(){
 		}
 	}
 } 
+
+int OperatingSystem_IsMoreImportant(int PID1, int PID2){
+	if(processTable[PID1].queueID < processTable[PID2].queueID){
+		return 1;
+	}
+
+	if(processTable[PID1].priority < processTable[PID2].priority){
+		return 1;
+	}
+
+	return 0;
+}
 
 void OperatingSystem_MoveToTheBLOCKEDState(int PID) {
 	int plIndex, state;
