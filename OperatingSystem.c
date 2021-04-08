@@ -261,10 +261,12 @@ void OperatingSystem_PCBInitialization(int PID, int initialPhysicalAddress, int 
 	if (programList[processPLIndex]->type == DAEMONPROGRAM) {
 		processTable[PID].copyOfPCRegister=initialPhysicalAddress;
 		processTable[PID].copyOfPSWRegister= ((unsigned int) 1) << EXECUTION_MODE_BIT;
+		processTable[PID].queueID = DAEMONSQUEUE;
 	} 
 	else {
 		processTable[PID].copyOfPCRegister=0;
 		processTable[PID].copyOfPSWRegister=0;
+		processTable[PID].queueID = USERPROCESSQUEUE;
 	}
 
 	char* name = programList[processPLIndex]->executableName;
@@ -278,7 +280,7 @@ void OperatingSystem_PCBInitialization(int PID, int initialPhysicalAddress, int 
 void OperatingSystem_MoveToTheREADYState(int PID) {
 	int plIndex, state, type;
 	plIndex = processTable[PID].programListIndex;
-	type = programList[plIndex]->type;
+	type = processTable[PID].queueID;
 
 	if (Heap_add(PID, readyToRunQueue[type],QUEUE_PRIORITY ,&numberOfReadyToRunProcesses[type],PROCESSTABLEMAXSIZE)>=0) {
 		char* name = programList[plIndex]->executableName;
@@ -454,7 +456,7 @@ void OperatingSystem_HandleSystemCall() {
 			break;
 		case SYSCALL_YIELD:;
 			int type;
-			type = programList[processTable[executingProcessID].programListIndex]->type;
+			type = processTable[executingProcessID].queueID;
 			if(numberOfReadyToRunProcesses[type] > 0){
 				int pid2 = Heap_getFirst(readyToRunQueue[type],numberOfReadyToRunProcesses[type]);
 				if(processTable[executingProcessID].priority == processTable[pid2].priority){

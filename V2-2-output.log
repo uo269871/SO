@@ -1,0 +1,1000 @@
+33 messages loaded from file messagesTCH.txt
+15 messages loaded from file messagesSTD.txt
+0 Asserts Loaded
+[[1;31m0[0m] [0mUser program list:
+	Program[[1;36mprogramV2-2a[0m] with arrival time [[1;36m0[0m]
+[0m	Program[[1;36mprogramV2-2b[0m] with arrival time [[1;36m0[0m]
+[0m	Program[[1;36mprogramV2-2c[0m] with arrival time [[1;36m0[0m]
+[0m	[[1;31m0[0m] [0mNew process [[1;32m3 - SystemIdleProcess[0m] moving to the [[1;32mNEW[0m] state
+[0m	[[1;31m0[0m] [0m[1;32mProcess [3] created from program [SystemIdleProcess][0m
+[0m	[[1;31m0[0m] [0mProcess [[1;32m3 - SystemIdleProcess[0m] moving from the [[1;32mNEW[0m] state to the [[1;32mREADY[0m] state
+[0m	[[1;31m0[0m] [0mNew process [[1;32m0 - programV2-2a[0m] moving to the [[1;32mNEW[0m] state
+[0m	[[1;31m0[0m] [0m[1;32mProcess [0] created from program [programV2-2a][0m
+[0m	[[1;31m0[0m] [0mProcess [[1;32m0 - programV2-2a[0m] moving from the [[1;32mNEW[0m] state to the [[1;32mREADY[0m] state
+[0m	[[1;31m0[0m] [0mNew process [[1;32m1 - programV2-2b[0m] moving to the [[1;32mNEW[0m] state
+[0m	[[1;31m0[0m] [0m[1;32mProcess [1] created from program [programV2-2b][0m
+[0m	[[1;31m0[0m] [0mProcess [[1;32m1 - programV2-2b[0m] moving from the [[1;32mNEW[0m] state to the [[1;32mREADY[0m] state
+[0m	[[1;31m0[0m] [0mNew process [[1;32m2 - programV2-2c[0m] moving to the [[1;32mNEW[0m] state
+[0m	[[1;31m0[0m] [0m[1;32mProcess [2] created from program [programV2-2c][0m
+[0m	[[1;31m0[0m] [0mProcess [[1;32m2 - programV2-2c[0m] moving from the [[1;32mNEW[0m] state to the [[1;32mREADY[0m] state
+[0m	[[1;31m0[0m] [0mRunning Process Information:
+		[--- No running process ---]
+	[[1;31m0[0m] [0mReady-to-Run processes queues:
+		USER: [[1;32m0[0m,5], [0m[[1;32m1[0m,999], [0m[[1;32m2[0m,5]
+[0m		DAEMONS: [[1;32m3[0m,5]
+[0m	[[1;31m0[0m] [0mSLEEPING Queue:
+		[--- empty queue ---]
+	[[1;31m0[0m] [0mPID association with program's name:
+		PID: [1;32m0[0m -> programV2-2a
+[0m		PID: [1;32m1[0m -> programV2-2b
+[0m		PID: [1;32m2[0m -> programV2-2c
+[0m		PID: [1;32m3[0m -> SystemIdleProcess
+[0m	[[1;31m0[0m] [0mProcess [[1;32m0 - programV2-2a[0m] moving from the [[1;32mREADY[0m] state to the [[1;32mEXECUTING[0m] state
+[0m[[1;31m1[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m0[0m, Accumulator: [1;31m0[0m, PSW: [1;31m0002[0m [[1;31m--------------Z-[0m])
+[0m[2] {05 000 000} NOP 0 0 (PC: [1;31m1[0m, Accumulator: [1;31m0[0m, PSW: [1;31m0002[0m [[1;31m--------------Z-[0m])
+[0m[3] {01 005 000} ADD 5 0 (PC: [1;31m2[0m, Accumulator: [1;31m5[0m, PSW: [1;31m0000[0m [[1;31m----------------[0m])
+[0m[4] {04 007 000} TRAP 7 0 (PC: [1;31m3[0m, Accumulator: [1;31m5[0m, PSW: [1;31m0000[0m [[1;31m----------------[0m])
+[0m[[1;31m5[0m] [0m{0C 002 000} OS 2 0 (PC: [1;31m242[0m, Accumulator: [1;31m5[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m6[0m] [0mProcess [[1;32m0 - programV2-2a[0m] moving from the [[1;32mEXECUTING[0m] state to the [[1;32mBLOCKED[0m] state
+[0m	[[1;31m6[0m] [0mProcess [[1;32m2 - programV2-2c[0m] moving from the [[1;32mREADY[0m] state to the [[1;32mEXECUTING[0m] state
+[0m	[[1;31m6[0m] [0mRunning Process Information:
+		[PID: [1;32m2[0m, Priority: 5, WakeUp: [1;31m0[0m, Queue: USER]
+[0m	[[1;31m6[0m] [0mReady-to-Run processes queues:
+		USER: [[1;32m1[0m,5]
+[0m		DAEMONS: [[1;32m3[0m,5]
+[0m	[[1;31m6[0m] [0mSLEEPING Queue:
+		[[1;32m0[0m, 5, [1;31m6[0m][0m
+	[[1;31m6[0m] [0mPID association with program's name:
+		PID: [1;32m0[0m -> programV2-2a
+[0m		PID: [1;32m1[0m -> programV2-2b
+[0m		PID: [1;32m2[0m -> programV2-2c
+[0m		PID: [1;32m3[0m -> SystemIdleProcess
+[0m[[1;31m7[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m0[0m, Accumulator: [1;31m0[0m, PSW: [1;31m0002[0m [[1;31m--------------Z-[0m])
+[0m[[1;31m8[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m0[0m, PSW: [1;31m8082[0m [[1;31mM-------X-----Z-[0m])
+[0m	[[1;31m9[0m] [0m[1;36mClock interrupt number [1] has ocurred[0m
+[0m[[1;31m10[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m0[0m, Accumulator: [1;31m0[0m, PSW: [1;31m0002[0m [[1;31m--------------Z-[0m])
+[0m[[1;31m11[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m0[0m, PSW: [1;31m8082[0m [[1;31mM-------X-----Z-[0m])
+[0m	[[1;31m12[0m] [0m[1;36mClock interrupt number [2] has ocurred[0m
+[0m[[1;31m13[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m0[0m, Accumulator: [1;31m0[0m, PSW: [1;31m0002[0m [[1;31m--------------Z-[0m])
+[0m[14] {05 000 000} NOP 0 0 (PC: [1;31m1[0m, Accumulator: [1;31m0[0m, PSW: [1;31m0002[0m [[1;31m--------------Z-[0m])
+[0m[15] {01 002 000} ADD 2 0 (PC: [1;31m2[0m, Accumulator: [1;31m2[0m, PSW: [1;31m0000[0m [[1;31m----------------[0m])
+[0m[[1;31m16[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m17[0m] [0m[1;36mClock interrupt number [3] has ocurred[0m
+[0m[[1;31m18[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m2[0m, Accumulator: [1;31m2[0m, PSW: [1;31m0000[0m [[1;31m----------------[0m])
+[0m[19] {04 007 000} TRAP 7 0 (PC: [1;31m3[0m, Accumulator: [1;31m2[0m, PSW: [1;31m0000[0m [[1;31m----------------[0m])
+[0m[[1;31m20[0m] [0m{0C 002 000} OS 2 0 (PC: [1;31m242[0m, Accumulator: [1;31m2[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m21[0m] [0mProcess [[1;32m2 - programV2-2c[0m] moving from the [[1;32mEXECUTING[0m] state to the [[1;32mBLOCKED[0m] state
+[0m	[[1;31m21[0m] [0mProcess [[1;32m1 - programV2-2b[0m] moving from the [[1;32mREADY[0m] state to the [[1;32mEXECUTING[0m] state
+[0m	[[1;31m21[0m] [0mRunning Process Information:
+		[PID: [1;32m1[0m, Priority: 999, WakeUp: [1;31m0[0m, Queue: USER]
+[0m	[[1;31m21[0m] [0mReady-to-Run processes queues:
+		USER:
+		DAEMONS: [[1;32m3[0m,5]
+[0m	[[1;31m21[0m] [0mSLEEPING Queue:
+		[[1;32m0[0m, 5, [1;31m6[0m][0m, [[1;32m2[0m, 5, [1;31m6[0m][0m
+	[[1;31m21[0m] [0mPID association with program's name:
+		PID: [1;32m0[0m -> programV2-2a
+[0m		PID: [1;32m1[0m -> programV2-2b
+[0m		PID: [1;32m2[0m -> programV2-2c
+[0m		PID: [1;32m3[0m -> SystemIdleProcess
+[0m[[1;31m22[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m0[0m, Accumulator: [1;31m0[0m, PSW: [1;31m0002[0m [[1;31m--------------Z-[0m])
+[0m[[1;31m23[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m0[0m, PSW: [1;31m8082[0m [[1;31mM-------X-----Z-[0m])
+[0m	[[1;31m24[0m] [0m[1;36mClock interrupt number [4] has ocurred[0m
+[0m[[1;31m25[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m0[0m, Accumulator: [1;31m0[0m, PSW: [1;31m0002[0m [[1;31m--------------Z-[0m])
+[0m[[1;31m26[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m0[0m, PSW: [1;31m8082[0m [[1;31mM-------X-----Z-[0m])
+[0m	[[1;31m27[0m] [0m[1;36mClock interrupt number [5] has ocurred[0m
+[0m[[1;31m28[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m0[0m, Accumulator: [1;31m0[0m, PSW: [1;31m0002[0m [[1;31m--------------Z-[0m])
+[0m[29] {01 002 000} ADD 2 0 (PC: [1;31m1[0m, Accumulator: [1;31m2[0m, PSW: [1;31m0000[0m [[1;31m----------------[0m])
+[0m[30] {0A 801 000} INC -1 0 (PC: [1;31m2[0m, Accumulator: [1;31m1[0m, PSW: [1;31m0000[0m [[1;31m----------------[0m])
+[0m[[1;31m31[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m1[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m32[0m] [0m[1;36mClock interrupt number [6] has ocurred[0m
+[0m	[[1;31m32[0m] [0mProcess [[1;32m0 - programV2-2a[0m] moving from the [[1;32mBLOCKED[0m] state to the [[1;32mREADY[0m] state
+[0m	[[1;31m32[0m] [0mProcess [[1;32m2 - programV2-2c[0m] moving from the [[1;32mBLOCKED[0m] state to the [[1;32mREADY[0m] state
+[0m	[[1;31m32[0m] [0mRunning Process Information:
+		[PID: [1;32m1[0m, Priority: 999, WakeUp: [1;31m0[0m, Queue: USER]
+[0m	[[1;31m32[0m] [0mReady-to-Run processes queues:
+		USER: [[1;32m0[0m,5], [0m[[1;32m2[0m,999]
+[0m		DAEMONS: [[1;32m3[0m,5]
+[0m	[[1;31m32[0m] [0mSLEEPING Queue:
+		[--- empty queue ---]
+	[[1;31m32[0m] [0mPID association with program's name:
+		PID: [1;32m0[0m -> programV2-2a
+[0m		PID: [1;32m1[0m -> programV2-2b
+[0m		PID: [1;32m2[0m -> programV2-2c
+[0m		PID: [1;32m3[0m -> SystemIdleProcess
+[0m	[[1;31m32[0m] [0mProcess [[1;32m1 – programV2-2b[0m] will be thrown out of the processor by process [[1;32m0 – programV2-2a[0m]
+[0m	[[1;31m32[0m] [0mProcess [[1;32m1 - programV2-2b[0m] moving from the [[1;32mEXECUTING[0m] state to the [[1;32mREADY[0m] state
+[0m	[[1;31m32[0m] [0mProcess [[1;32m0 - programV2-2a[0m] moving from the [[1;32mREADY[0m] state to the [[1;32mEXECUTING[0m] state
+[0m	[[1;31m32[0m] [0mRunning Process Information:
+		[PID: [1;32m0[0m, Priority: 5, WakeUp: [1;31m6[0m, Queue: USER]
+[0m	[[1;31m32[0m] [0mReady-to-Run processes queues:
+		USER: [[1;32m2[0m,5], [0m[[1;32m1[0m,999]
+[0m		DAEMONS: [[1;32m3[0m,5]
+[0m	[[1;31m32[0m] [0mSLEEPING Queue:
+		[--- empty queue ---]
+	[[1;31m32[0m] [0mPID association with program's name:
+		PID: [1;32m0[0m -> programV2-2a
+[0m		PID: [1;32m1[0m -> programV2-2b
+[0m		PID: [1;32m2[0m -> programV2-2c
+[0m		PID: [1;32m3[0m -> SystemIdleProcess
+[0m[[1;31m33[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m3[0m, Accumulator: [1;31m5[0m, PSW: [1;31m0000[0m [[1;31m----------------[0m])
+[0m[34] {04 004 000} TRAP 4 0 (PC: [1;31m4[0m, Accumulator: [1;31m5[0m, PSW: [1;31m0000[0m [[1;31m----------------[0m])
+[0m[[1;31m35[0m] [0m{0C 002 000} OS 2 0 (PC: [1;31m242[0m, Accumulator: [1;31m5[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m36[0m] [0mProcess [[1;32m0 – programV2-2a[0m] will transfer the control of the processor to process [[1;32m2 – programV2-2c[0m]
+[0m	[[1;31m36[0m] [0mProcess [[1;32m0 - programV2-2a[0m] moving from the [[1;32mEXECUTING[0m] state to the [[1;32mREADY[0m] state
+[0m	[[1;31m36[0m] [0mProcess [[1;32m2 - programV2-2c[0m] moving from the [[1;32mREADY[0m] state to the [[1;32mEXECUTING[0m] state
+[0m	[[1;31m36[0m] [0mRunning Process Information:
+		[PID: [1;32m2[0m, Priority: 5, WakeUp: [1;31m6[0m, Queue: USER]
+[0m	[[1;31m36[0m] [0mReady-to-Run processes queues:
+		USER: [[1;32m0[0m,5], [0m[[1;32m1[0m,999]
+[0m		DAEMONS: [[1;32m3[0m,5]
+[0m	[[1;31m36[0m] [0mSLEEPING Queue:
+		[--- empty queue ---]
+	[[1;31m36[0m] [0mPID association with program's name:
+		PID: [1;32m0[0m -> programV2-2a
+[0m		PID: [1;32m1[0m -> programV2-2b
+[0m		PID: [1;32m2[0m -> programV2-2c
+[0m		PID: [1;32m3[0m -> SystemIdleProcess
+[0m[[1;31m37[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m3[0m, Accumulator: [1;31m2[0m, PSW: [1;31m0000[0m [[1;31m----------------[0m])
+[0m[[1;31m38[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m39[0m] [0m[1;36mClock interrupt number [7] has ocurred[0m
+[0m[[1;31m40[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m3[0m, Accumulator: [1;31m2[0m, PSW: [1;31m0000[0m [[1;31m----------------[0m])
+[0m[[1;31m41[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m42[0m] [0m[1;36mClock interrupt number [8] has ocurred[0m
+[0m[[1;31m43[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m3[0m, Accumulator: [1;31m2[0m, PSW: [1;31m0000[0m [[1;31m----------------[0m])
+[0m[44] {04 004 000} TRAP 4 0 (PC: [1;31m4[0m, Accumulator: [1;31m2[0m, PSW: [1;31m0000[0m [[1;31m----------------[0m])
+[0m[[1;31m45[0m] [0m{0C 002 000} OS 2 0 (PC: [1;31m242[0m, Accumulator: [1;31m2[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m46[0m] [0mProcess [[1;32m2 – programV2-2c[0m] will transfer the control of the processor to process [[1;32m0 – programV2-2a[0m]
+[0m	[[1;31m46[0m] [0mProcess [[1;32m2 - programV2-2c[0m] moving from the [[1;32mEXECUTING[0m] state to the [[1;32mREADY[0m] state
+[0m	[[1;31m46[0m] [0mProcess [[1;32m0 - programV2-2a[0m] moving from the [[1;32mREADY[0m] state to the [[1;32mEXECUTING[0m] state
+[0m	[[1;31m46[0m] [0mRunning Process Information:
+		[PID: [1;32m0[0m, Priority: 5, WakeUp: [1;31m6[0m, Queue: USER]
+[0m	[[1;31m46[0m] [0mReady-to-Run processes queues:
+		USER: [[1;32m2[0m,5], [0m[[1;32m1[0m,999]
+[0m		DAEMONS: [[1;32m3[0m,5]
+[0m	[[1;31m46[0m] [0mSLEEPING Queue:
+		[--- empty queue ---]
+	[[1;31m46[0m] [0mPID association with program's name:
+		PID: [1;32m0[0m -> programV2-2a
+[0m		PID: [1;32m1[0m -> programV2-2b
+[0m		PID: [1;32m2[0m -> programV2-2c
+[0m		PID: [1;32m3[0m -> SystemIdleProcess
+[0m[[1;31m47[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m4[0m, Accumulator: [1;31m5[0m, PSW: [1;31m0000[0m [[1;31m----------------[0m])
+[0m[[1;31m48[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m5[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m49[0m] [0m[1;36mClock interrupt number [9] has ocurred[0m
+[0m[[1;31m50[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m4[0m, Accumulator: [1;31m5[0m, PSW: [1;31m0000[0m [[1;31m----------------[0m])
+[0m[[1;31m51[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m5[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m52[0m] [0m[1;36mClock interrupt number [10] has ocurred[0m
+[0m[[1;31m53[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m4[0m, Accumulator: [1;31m5[0m, PSW: [1;31m0000[0m [[1;31m----------------[0m])
+[0m[54] {04 003 000} TRAP 3 0 (PC: [1;31m5[0m, Accumulator: [1;31m5[0m, PSW: [1;31m0000[0m [[1;31m----------------[0m])
+[0m[[1;31m55[0m] [0m{0C 002 000} OS 2 0 (PC: [1;31m242[0m, Accumulator: [1;31m5[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m56[0m] [0m[1;31mProcess [0 - programV2-2a] has requested to terminate[0m
+[0m	[[1;31m56[0m] [0mProcess [[1;32m0 - programV2-2a[0m] moving from the [[1;32mEXECUTING[0m] state to the [[1;32mEXIT[0m] state
+[0m	[[1;31m56[0m] [0mProcess [[1;32m2 - programV2-2c[0m] moving from the [[1;32mREADY[0m] state to the [[1;32mEXECUTING[0m] state
+[0m	[[1;31m56[0m] [0mRunning Process Information:
+		[PID: [1;32m2[0m, Priority: 5, WakeUp: [1;31m6[0m, Queue: USER]
+[0m	[[1;31m56[0m] [0mReady-to-Run processes queues:
+		USER: [[1;32m1[0m,5]
+[0m		DAEMONS: [[1;32m3[0m,5]
+[0m	[[1;31m56[0m] [0mSLEEPING Queue:
+		[--- empty queue ---]
+	[[1;31m56[0m] [0mPID association with program's name:
+		PID: [1;32m0[0m -> programV2-2a
+[0m		PID: [1;32m1[0m -> programV2-2b
+[0m		PID: [1;32m2[0m -> programV2-2c
+[0m		PID: [1;32m3[0m -> SystemIdleProcess
+[0m[[1;31m57[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m4[0m, Accumulator: [1;31m2[0m, PSW: [1;31m0000[0m [[1;31m----------------[0m])
+[0m[[1;31m58[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m59[0m] [0m[1;36mClock interrupt number [11] has ocurred[0m
+[0m[[1;31m60[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m4[0m, Accumulator: [1;31m2[0m, PSW: [1;31m0000[0m [[1;31m----------------[0m])
+[0m[[1;31m61[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m62[0m] [0m[1;36mClock interrupt number [12] has ocurred[0m
+[0m[[1;31m63[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m4[0m, Accumulator: [1;31m2[0m, PSW: [1;31m0000[0m [[1;31m----------------[0m])
+[0m[64] {0D 000 000} IRET 0 0 (PC: [1;31m4[0m, Accumulator: [1;31m2[0m, PSW: [1;31m0000[0m [[1;31m----------------[0m])
+[0m[[1;31m65[0m] [0m{0C 006 000} OS 6 0 (PC: [1;31m244[0m, Accumulator: [1;31m2[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m66[0m] [0m[1;31mProcess [2 - programV2-2c] has generated an exception and is terminating[0m
+[0m	[[1;31m66[0m] [0mProcess [[1;32m2 - programV2-2c[0m] moving from the [[1;32mEXECUTING[0m] state to the [[1;32mEXIT[0m] state
+[0m	[[1;31m66[0m] [0mProcess [[1;32m1 - programV2-2b[0m] moving from the [[1;32mREADY[0m] state to the [[1;32mEXECUTING[0m] state
+[0m	[[1;31m66[0m] [0mRunning Process Information:
+		[PID: [1;32m1[0m, Priority: 999, WakeUp: [1;31m0[0m, Queue: USER]
+[0m	[[1;31m66[0m] [0mReady-to-Run processes queues:
+		USER:
+		DAEMONS: [[1;32m3[0m,5]
+[0m	[[1;31m66[0m] [0mSLEEPING Queue:
+		[--- empty queue ---]
+	[[1;31m66[0m] [0mPID association with program's name:
+		PID: [1;32m0[0m -> programV2-2a
+[0m		PID: [1;32m1[0m -> programV2-2b
+[0m		PID: [1;32m2[0m -> programV2-2c
+[0m		PID: [1;32m3[0m -> SystemIdleProcess
+[0m[[1;31m67[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m2[0m, Accumulator: [1;31m1[0m, PSW: [1;31m0000[0m [[1;31m----------------[0m])
+[0m[[1;31m68[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m1[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m69[0m] [0m[1;36mClock interrupt number [13] has ocurred[0m
+[0m[[1;31m70[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m2[0m, Accumulator: [1;31m1[0m, PSW: [1;31m0000[0m [[1;31m----------------[0m])
+[0m[[1;31m71[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m1[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m72[0m] [0m[1;36mClock interrupt number [14] has ocurred[0m
+[0m[[1;31m73[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m2[0m, Accumulator: [1;31m1[0m, PSW: [1;31m0000[0m [[1;31m----------------[0m])
+[0m[74] {07 002 000} ZJUMP 2 0 (PC: [1;31m3[0m, Accumulator: [1;31m1[0m, PSW: [1;31m0000[0m [[1;31m----------------[0m])
+[0m[75] {06 802 000} JUMP -2 0 (PC: [1;31m1[0m, Accumulator: [1;31m1[0m, PSW: [1;31m0000[0m [[1;31m----------------[0m])
+[0m[[1;31m76[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m1[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m77[0m] [0m[1;36mClock interrupt number [15] has ocurred[0m
+[0m[[1;31m78[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m1[0m, Accumulator: [1;31m1[0m, PSW: [1;31m0000[0m [[1;31m----------------[0m])
+[0m[79] {0A 801 000} INC -1 0 (PC: [1;31m2[0m, Accumulator: [1;31m0[0m, PSW: [1;31m0002[0m [[1;31m--------------Z-[0m])
+[0m[80] {07 002 000} ZJUMP 2 0 (PC: [1;31m4[0m, Accumulator: [1;31m0[0m, PSW: [1;31m0002[0m [[1;31m--------------Z-[0m])
+[0m[[1;31m81[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m0[0m, PSW: [1;31m8082[0m [[1;31mM-------X-----Z-[0m])
+[0m	[[1;31m82[0m] [0m[1;36mClock interrupt number [16] has ocurred[0m
+[0m[[1;31m83[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m4[0m, Accumulator: [1;31m0[0m, PSW: [1;31m0002[0m [[1;31m--------------Z-[0m])
+[0m[84] {0A 001 000} INC 1 0 (PC: [1;31m5[0m, Accumulator: [1;31m1[0m, PSW: [1;31m0000[0m [[1;31m----------------[0m])
+[0m[85] {04 007 000} TRAP 7 0 (PC: [1;31m6[0m, Accumulator: [1;31m1[0m, PSW: [1;31m0000[0m [[1;31m----------------[0m])
+[0m[[1;31m86[0m] [0m{0C 002 000} OS 2 0 (PC: [1;31m242[0m, Accumulator: [1;31m1[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m87[0m] [0mProcess [[1;32m1 - programV2-2b[0m] moving from the [[1;32mEXECUTING[0m] state to the [[1;32mBLOCKED[0m] state
+[0m	[[1;31m87[0m] [0mProcess [[1;32m3 - SystemIdleProcess[0m] moving from the [[1;32mREADY[0m] state to the [[1;32mEXECUTING[0m] state
+[0m	[[1;31m87[0m] [0mRunning Process Information:
+		[PID: [1;32m3[0m, Priority: 100, WakeUp: [1;31m0[0m, Queue: USER]
+[0m	[[1;31m87[0m] [0mReady-to-Run processes queues:
+		USER:
+		DAEMONS:
+	[[1;31m87[0m] [0mSLEEPING Queue:
+		[[1;32m1[0m, 999, [1;31m18[0m][0m
+	[[1;31m87[0m] [0mPID association with program's name:
+		PID: [1;32m0[0m -> programV2-2a
+[0m		PID: [1;32m1[0m -> programV2-2b
+[0m		PID: [1;32m2[0m -> programV2-2c
+[0m		PID: [1;32m3[0m -> SystemIdleProcess
+[0m[[1;31m88[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m180[0m, Accumulator: [1;31m0[0m, PSW: [1;31m0082[0m [[1;31m--------X-----Z-[0m])
+[0m[[1;31m89[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m0[0m, PSW: [1;31m8082[0m [[1;31mM-------X-----Z-[0m])
+[0m	[[1;31m90[0m] [0m[1;36mClock interrupt number [17] has ocurred[0m
+[0m[[1;31m91[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m180[0m, Accumulator: [1;31m0[0m, PSW: [1;31m0082[0m [[1;31m--------X-----Z-[0m])
+[0m[[1;31m92[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m0[0m, PSW: [1;31m8082[0m [[1;31mM-------X-----Z-[0m])
+[0m	[[1;31m93[0m] [0m[1;36mClock interrupt number [18] has ocurred[0m
+[0m	[[1;31m93[0m] [0mProcess [[1;32m1 - programV2-2b[0m] moving from the [[1;32mBLOCKED[0m] state to the [[1;32mREADY[0m] state
+[0m	[[1;31m93[0m] [0mRunning Process Information:
+		[PID: [1;32m3[0m, Priority: 100, WakeUp: [1;31m0[0m, Queue: USER]
+[0m	[[1;31m93[0m] [0mReady-to-Run processes queues:
+		USER: [[1;32m1[0m,5]
+[0m		DAEMONS:
+	[[1;31m93[0m] [0mSLEEPING Queue:
+		[--- empty queue ---]
+	[[1;31m93[0m] [0mPID association with program's name:
+		PID: [1;32m0[0m -> programV2-2a
+[0m		PID: [1;32m1[0m -> programV2-2b
+[0m		PID: [1;32m2[0m -> programV2-2c
+[0m		PID: [1;32m3[0m -> SystemIdleProcess
+[0m[[1;31m94[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m180[0m, Accumulator: [1;31m0[0m, PSW: [1;31m0082[0m [[1;31m--------X-----Z-[0m])
+[0m[[1;31m95[0m] [0m{01 518 2CD} ADD 1304 717 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m96[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m97[0m] [0m[1;36mClock interrupt number [19] has ocurred[0m
+[0m[[1;31m98[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m99[0m] [0m{05 000 000} NOP 0 0 (PC: [1;31m182[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m100[0m] [0m{06 801 000} JUMP -1 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m101[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m102[0m] [0m[1;36mClock interrupt number [20] has ocurred[0m
+[0m[[1;31m103[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m104[0m] [0m{05 000 000} NOP 0 0 (PC: [1;31m182[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m105[0m] [0m{06 801 000} JUMP -1 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m106[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m107[0m] [0m[1;36mClock interrupt number [21] has ocurred[0m
+[0m[[1;31m108[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m109[0m] [0m{05 000 000} NOP 0 0 (PC: [1;31m182[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m110[0m] [0m{06 801 000} JUMP -1 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m111[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m112[0m] [0m[1;36mClock interrupt number [22] has ocurred[0m
+[0m[[1;31m113[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m114[0m] [0m{05 000 000} NOP 0 0 (PC: [1;31m182[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m115[0m] [0m{06 801 000} JUMP -1 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m116[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m117[0m] [0m[1;36mClock interrupt number [23] has ocurred[0m
+[0m[[1;31m118[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m119[0m] [0m{05 000 000} NOP 0 0 (PC: [1;31m182[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m120[0m] [0m{06 801 000} JUMP -1 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m121[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m122[0m] [0m[1;36mClock interrupt number [24] has ocurred[0m
+[0m[[1;31m123[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m124[0m] [0m{05 000 000} NOP 0 0 (PC: [1;31m182[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m125[0m] [0m{06 801 000} JUMP -1 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m126[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m127[0m] [0m[1;36mClock interrupt number [25] has ocurred[0m
+[0m[[1;31m128[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m129[0m] [0m{05 000 000} NOP 0 0 (PC: [1;31m182[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m130[0m] [0m{06 801 000} JUMP -1 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m131[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m132[0m] [0m[1;36mClock interrupt number [26] has ocurred[0m
+[0m[[1;31m133[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m134[0m] [0m{05 000 000} NOP 0 0 (PC: [1;31m182[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m135[0m] [0m{06 801 000} JUMP -1 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m136[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m137[0m] [0m[1;36mClock interrupt number [27] has ocurred[0m
+[0m[[1;31m138[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m139[0m] [0m{05 000 000} NOP 0 0 (PC: [1;31m182[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m140[0m] [0m{06 801 000} JUMP -1 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m141[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m142[0m] [0m[1;36mClock interrupt number [28] has ocurred[0m
+[0m[[1;31m143[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m144[0m] [0m{05 000 000} NOP 0 0 (PC: [1;31m182[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m145[0m] [0m{06 801 000} JUMP -1 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m146[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m147[0m] [0m[1;36mClock interrupt number [29] has ocurred[0m
+[0m[[1;31m148[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m149[0m] [0m{05 000 000} NOP 0 0 (PC: [1;31m182[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m150[0m] [0m{06 801 000} JUMP -1 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m151[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m152[0m] [0m[1;36mClock interrupt number [30] has ocurred[0m
+[0m[[1;31m153[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m154[0m] [0m{05 000 000} NOP 0 0 (PC: [1;31m182[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m155[0m] [0m{06 801 000} JUMP -1 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m156[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m157[0m] [0m[1;36mClock interrupt number [31] has ocurred[0m
+[0m[[1;31m158[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m159[0m] [0m{05 000 000} NOP 0 0 (PC: [1;31m182[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m160[0m] [0m{06 801 000} JUMP -1 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m161[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m162[0m] [0m[1;36mClock interrupt number [32] has ocurred[0m
+[0m[[1;31m163[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m164[0m] [0m{05 000 000} NOP 0 0 (PC: [1;31m182[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m165[0m] [0m{06 801 000} JUMP -1 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m166[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m167[0m] [0m[1;36mClock interrupt number [33] has ocurred[0m
+[0m[[1;31m168[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m169[0m] [0m{05 000 000} NOP 0 0 (PC: [1;31m182[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m170[0m] [0m{06 801 000} JUMP -1 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m171[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m172[0m] [0m[1;36mClock interrupt number [34] has ocurred[0m
+[0m[[1;31m173[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m174[0m] [0m{05 000 000} NOP 0 0 (PC: [1;31m182[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m175[0m] [0m{06 801 000} JUMP -1 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m176[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m177[0m] [0m[1;36mClock interrupt number [35] has ocurred[0m
+[0m[[1;31m178[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m179[0m] [0m{05 000 000} NOP 0 0 (PC: [1;31m182[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m180[0m] [0m{06 801 000} JUMP -1 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m181[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m182[0m] [0m[1;36mClock interrupt number [36] has ocurred[0m
+[0m[[1;31m183[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m184[0m] [0m{05 000 000} NOP 0 0 (PC: [1;31m182[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m185[0m] [0m{06 801 000} JUMP -1 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m186[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m187[0m] [0m[1;36mClock interrupt number [37] has ocurred[0m
+[0m[[1;31m188[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m189[0m] [0m{05 000 000} NOP 0 0 (PC: [1;31m182[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m190[0m] [0m{06 801 000} JUMP -1 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m191[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m192[0m] [0m[1;36mClock interrupt number [38] has ocurred[0m
+[0m[[1;31m193[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m194[0m] [0m{05 000 000} NOP 0 0 (PC: [1;31m182[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m195[0m] [0m{06 801 000} JUMP -1 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m196[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m197[0m] [0m[1;36mClock interrupt number [39] has ocurred[0m
+[0m[[1;31m198[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m199[0m] [0m{05 000 000} NOP 0 0 (PC: [1;31m182[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m200[0m] [0m{06 801 000} JUMP -1 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m201[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m202[0m] [0m[1;36mClock interrupt number [40] has ocurred[0m
+[0m[[1;31m203[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m204[0m] [0m{05 000 000} NOP 0 0 (PC: [1;31m182[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m205[0m] [0m{06 801 000} JUMP -1 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m206[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m207[0m] [0m[1;36mClock interrupt number [41] has ocurred[0m
+[0m[[1;31m208[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m209[0m] [0m{05 000 000} NOP 0 0 (PC: [1;31m182[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m210[0m] [0m{06 801 000} JUMP -1 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m211[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m212[0m] [0m[1;36mClock interrupt number [42] has ocurred[0m
+[0m[[1;31m213[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m214[0m] [0m{05 000 000} NOP 0 0 (PC: [1;31m182[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m215[0m] [0m{06 801 000} JUMP -1 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m216[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m217[0m] [0m[1;36mClock interrupt number [43] has ocurred[0m
+[0m[[1;31m218[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m219[0m] [0m{05 000 000} NOP 0 0 (PC: [1;31m182[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m220[0m] [0m{06 801 000} JUMP -1 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m221[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m222[0m] [0m[1;36mClock interrupt number [44] has ocurred[0m
+[0m[[1;31m223[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m224[0m] [0m{05 000 000} NOP 0 0 (PC: [1;31m182[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m225[0m] [0m{06 801 000} JUMP -1 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m226[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m227[0m] [0m[1;36mClock interrupt number [45] has ocurred[0m
+[0m[[1;31m228[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m229[0m] [0m{05 000 000} NOP 0 0 (PC: [1;31m182[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m230[0m] [0m{06 801 000} JUMP -1 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m231[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m232[0m] [0m[1;36mClock interrupt number [46] has ocurred[0m
+[0m[[1;31m233[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m234[0m] [0m{05 000 000} NOP 0 0 (PC: [1;31m182[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m235[0m] [0m{06 801 000} JUMP -1 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m236[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m237[0m] [0m[1;36mClock interrupt number [47] has ocurred[0m
+[0m[[1;31m238[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m239[0m] [0m{05 000 000} NOP 0 0 (PC: [1;31m182[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m240[0m] [0m{06 801 000} JUMP -1 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m241[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m242[0m] [0m[1;36mClock interrupt number [48] has ocurred[0m
+[0m[[1;31m243[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m244[0m] [0m{05 000 000} NOP 0 0 (PC: [1;31m182[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m245[0m] [0m{06 801 000} JUMP -1 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m246[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m247[0m] [0m[1;36mClock interrupt number [49] has ocurred[0m
+[0m[[1;31m248[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m249[0m] [0m{05 000 000} NOP 0 0 (PC: [1;31m182[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m250[0m] [0m{06 801 000} JUMP -1 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m251[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m252[0m] [0m[1;36mClock interrupt number [50] has ocurred[0m
+[0m[[1;31m253[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m254[0m] [0m{05 000 000} NOP 0 0 (PC: [1;31m182[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m255[0m] [0m{06 801 000} JUMP -1 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m256[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m257[0m] [0m[1;36mClock interrupt number [51] has ocurred[0m
+[0m[[1;31m258[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m259[0m] [0m{05 000 000} NOP 0 0 (PC: [1;31m182[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m260[0m] [0m{06 801 000} JUMP -1 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m261[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m262[0m] [0m[1;36mClock interrupt number [52] has ocurred[0m
+[0m[[1;31m263[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m264[0m] [0m{05 000 000} NOP 0 0 (PC: [1;31m182[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m265[0m] [0m{06 801 000} JUMP -1 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m266[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m267[0m] [0m[1;36mClock interrupt number [53] has ocurred[0m
+[0m[[1;31m268[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m269[0m] [0m{05 000 000} NOP 0 0 (PC: [1;31m182[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m270[0m] [0m{06 801 000} JUMP -1 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m271[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m272[0m] [0m[1;36mClock interrupt number [54] has ocurred[0m
+[0m[[1;31m273[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m274[0m] [0m{05 000 000} NOP 0 0 (PC: [1;31m182[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m275[0m] [0m{06 801 000} JUMP -1 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m276[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m277[0m] [0m[1;36mClock interrupt number [55] has ocurred[0m
+[0m[[1;31m278[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m279[0m] [0m{05 000 000} NOP 0 0 (PC: [1;31m182[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m280[0m] [0m{06 801 000} JUMP -1 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m281[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m282[0m] [0m[1;36mClock interrupt number [56] has ocurred[0m
+[0m[[1;31m283[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m284[0m] [0m{05 000 000} NOP 0 0 (PC: [1;31m182[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m285[0m] [0m{06 801 000} JUMP -1 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m286[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m287[0m] [0m[1;36mClock interrupt number [57] has ocurred[0m
+[0m[[1;31m288[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m289[0m] [0m{05 000 000} NOP 0 0 (PC: [1;31m182[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m290[0m] [0m{06 801 000} JUMP -1 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m291[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m292[0m] [0m[1;36mClock interrupt number [58] has ocurred[0m
+[0m[[1;31m293[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m294[0m] [0m{05 000 000} NOP 0 0 (PC: [1;31m182[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m295[0m] [0m{06 801 000} JUMP -1 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m296[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m297[0m] [0m[1;36mClock interrupt number [59] has ocurred[0m
+[0m[[1;31m298[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m299[0m] [0m{05 000 000} NOP 0 0 (PC: [1;31m182[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m300[0m] [0m{06 801 000} JUMP -1 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m301[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m302[0m] [0m[1;36mClock interrupt number [60] has ocurred[0m
+[0m[[1;31m303[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m304[0m] [0m{05 000 000} NOP 0 0 (PC: [1;31m182[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m305[0m] [0m{06 801 000} JUMP -1 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m306[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m307[0m] [0m[1;36mClock interrupt number [61] has ocurred[0m
+[0m[[1;31m308[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m309[0m] [0m{05 000 000} NOP 0 0 (PC: [1;31m182[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m310[0m] [0m{06 801 000} JUMP -1 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m311[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m312[0m] [0m[1;36mClock interrupt number [62] has ocurred[0m
+[0m[[1;31m313[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m314[0m] [0m{05 000 000} NOP 0 0 (PC: [1;31m182[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m315[0m] [0m{06 801 000} JUMP -1 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m316[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m317[0m] [0m[1;36mClock interrupt number [63] has ocurred[0m
+[0m[[1;31m318[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m319[0m] [0m{05 000 000} NOP 0 0 (PC: [1;31m182[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m320[0m] [0m{06 801 000} JUMP -1 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m321[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m322[0m] [0m[1;36mClock interrupt number [64] has ocurred[0m
+[0m[[1;31m323[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m324[0m] [0m{05 000 000} NOP 0 0 (PC: [1;31m182[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m325[0m] [0m{06 801 000} JUMP -1 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m326[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m327[0m] [0m[1;36mClock interrupt number [65] has ocurred[0m
+[0m[[1;31m328[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m329[0m] [0m{05 000 000} NOP 0 0 (PC: [1;31m182[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m330[0m] [0m{06 801 000} JUMP -1 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m331[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m332[0m] [0m[1;36mClock interrupt number [66] has ocurred[0m
+[0m[[1;31m333[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m334[0m] [0m{05 000 000} NOP 0 0 (PC: [1;31m182[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m335[0m] [0m{06 801 000} JUMP -1 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m336[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m337[0m] [0m[1;36mClock interrupt number [67] has ocurred[0m
+[0m[[1;31m338[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m339[0m] [0m{05 000 000} NOP 0 0 (PC: [1;31m182[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m340[0m] [0m{06 801 000} JUMP -1 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m341[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m342[0m] [0m[1;36mClock interrupt number [68] has ocurred[0m
+[0m[[1;31m343[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m344[0m] [0m{05 000 000} NOP 0 0 (PC: [1;31m182[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m345[0m] [0m{06 801 000} JUMP -1 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m346[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m347[0m] [0m[1;36mClock interrupt number [69] has ocurred[0m
+[0m[[1;31m348[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m349[0m] [0m{05 000 000} NOP 0 0 (PC: [1;31m182[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m350[0m] [0m{06 801 000} JUMP -1 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m351[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m352[0m] [0m[1;36mClock interrupt number [70] has ocurred[0m
+[0m[[1;31m353[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m354[0m] [0m{05 000 000} NOP 0 0 (PC: [1;31m182[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m355[0m] [0m{06 801 000} JUMP -1 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m356[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m357[0m] [0m[1;36mClock interrupt number [71] has ocurred[0m
+[0m[[1;31m358[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m359[0m] [0m{05 000 000} NOP 0 0 (PC: [1;31m182[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m360[0m] [0m{06 801 000} JUMP -1 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m361[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m362[0m] [0m[1;36mClock interrupt number [72] has ocurred[0m
+[0m[[1;31m363[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m364[0m] [0m{05 000 000} NOP 0 0 (PC: [1;31m182[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m365[0m] [0m{06 801 000} JUMP -1 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m366[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m367[0m] [0m[1;36mClock interrupt number [73] has ocurred[0m
+[0m[[1;31m368[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m369[0m] [0m{05 000 000} NOP 0 0 (PC: [1;31m182[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m370[0m] [0m{06 801 000} JUMP -1 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m371[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m372[0m] [0m[1;36mClock interrupt number [74] has ocurred[0m
+[0m[[1;31m373[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m374[0m] [0m{05 000 000} NOP 0 0 (PC: [1;31m182[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m375[0m] [0m{06 801 000} JUMP -1 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m376[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m377[0m] [0m[1;36mClock interrupt number [75] has ocurred[0m
+[0m[[1;31m378[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m379[0m] [0m{05 000 000} NOP 0 0 (PC: [1;31m182[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m380[0m] [0m{06 801 000} JUMP -1 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m381[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m382[0m] [0m[1;36mClock interrupt number [76] has ocurred[0m
+[0m[[1;31m383[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m384[0m] [0m{05 000 000} NOP 0 0 (PC: [1;31m182[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m385[0m] [0m{06 801 000} JUMP -1 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m386[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m387[0m] [0m[1;36mClock interrupt number [77] has ocurred[0m
+[0m[[1;31m388[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m389[0m] [0m{05 000 000} NOP 0 0 (PC: [1;31m182[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m390[0m] [0m{06 801 000} JUMP -1 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m391[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m392[0m] [0m[1;36mClock interrupt number [78] has ocurred[0m
+[0m[[1;31m393[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m394[0m] [0m{05 000 000} NOP 0 0 (PC: [1;31m182[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m395[0m] [0m{06 801 000} JUMP -1 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m396[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m397[0m] [0m[1;36mClock interrupt number [79] has ocurred[0m
+[0m[[1;31m398[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m399[0m] [0m{05 000 000} NOP 0 0 (PC: [1;31m182[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m400[0m] [0m{06 801 000} JUMP -1 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m401[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m402[0m] [0m[1;36mClock interrupt number [80] has ocurred[0m
+[0m[[1;31m403[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m404[0m] [0m{05 000 000} NOP 0 0 (PC: [1;31m182[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m405[0m] [0m{06 801 000} JUMP -1 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m406[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m407[0m] [0m[1;36mClock interrupt number [81] has ocurred[0m
+[0m[[1;31m408[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m409[0m] [0m{05 000 000} NOP 0 0 (PC: [1;31m182[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m410[0m] [0m{06 801 000} JUMP -1 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m411[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m412[0m] [0m[1;36mClock interrupt number [82] has ocurred[0m
+[0m[[1;31m413[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m414[0m] [0m{05 000 000} NOP 0 0 (PC: [1;31m182[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m415[0m] [0m{06 801 000} JUMP -1 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m416[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m417[0m] [0m[1;36mClock interrupt number [83] has ocurred[0m
+[0m[[1;31m418[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m419[0m] [0m{05 000 000} NOP 0 0 (PC: [1;31m182[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m420[0m] [0m{06 801 000} JUMP -1 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m421[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m422[0m] [0m[1;36mClock interrupt number [84] has ocurred[0m
+[0m[[1;31m423[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m424[0m] [0m{05 000 000} NOP 0 0 (PC: [1;31m182[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m425[0m] [0m{06 801 000} JUMP -1 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m426[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m427[0m] [0m[1;36mClock interrupt number [85] has ocurred[0m
+[0m[[1;31m428[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m429[0m] [0m{05 000 000} NOP 0 0 (PC: [1;31m182[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m430[0m] [0m{06 801 000} JUMP -1 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m431[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m432[0m] [0m[1;36mClock interrupt number [86] has ocurred[0m
+[0m[[1;31m433[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m434[0m] [0m{05 000 000} NOP 0 0 (PC: [1;31m182[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m435[0m] [0m{06 801 000} JUMP -1 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m436[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m437[0m] [0m[1;36mClock interrupt number [87] has ocurred[0m
+[0m[[1;31m438[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m439[0m] [0m{05 000 000} NOP 0 0 (PC: [1;31m182[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m440[0m] [0m{06 801 000} JUMP -1 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m441[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m442[0m] [0m[1;36mClock interrupt number [88] has ocurred[0m
+[0m[[1;31m443[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m444[0m] [0m{05 000 000} NOP 0 0 (PC: [1;31m182[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m445[0m] [0m{06 801 000} JUMP -1 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m446[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m447[0m] [0m[1;36mClock interrupt number [89] has ocurred[0m
+[0m[[1;31m448[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m449[0m] [0m{05 000 000} NOP 0 0 (PC: [1;31m182[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m450[0m] [0m{06 801 000} JUMP -1 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m451[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m452[0m] [0m[1;36mClock interrupt number [90] has ocurred[0m
+[0m[[1;31m453[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m454[0m] [0m{05 000 000} NOP 0 0 (PC: [1;31m182[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m455[0m] [0m{06 801 000} JUMP -1 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m456[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m457[0m] [0m[1;36mClock interrupt number [91] has ocurred[0m
+[0m[[1;31m458[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m459[0m] [0m{05 000 000} NOP 0 0 (PC: [1;31m182[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m460[0m] [0m{06 801 000} JUMP -1 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m461[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m462[0m] [0m[1;36mClock interrupt number [92] has ocurred[0m
+[0m[[1;31m463[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m464[0m] [0m{05 000 000} NOP 0 0 (PC: [1;31m182[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m465[0m] [0m{06 801 000} JUMP -1 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m466[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m467[0m] [0m[1;36mClock interrupt number [93] has ocurred[0m
+[0m[[1;31m468[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m469[0m] [0m{05 000 000} NOP 0 0 (PC: [1;31m182[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m470[0m] [0m{06 801 000} JUMP -1 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m471[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m472[0m] [0m[1;36mClock interrupt number [94] has ocurred[0m
+[0m[[1;31m473[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m474[0m] [0m{05 000 000} NOP 0 0 (PC: [1;31m182[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m475[0m] [0m{06 801 000} JUMP -1 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m476[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m477[0m] [0m[1;36mClock interrupt number [95] has ocurred[0m
+[0m[[1;31m478[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m479[0m] [0m{05 000 000} NOP 0 0 (PC: [1;31m182[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m480[0m] [0m{06 801 000} JUMP -1 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m481[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m482[0m] [0m[1;36mClock interrupt number [96] has ocurred[0m
+[0m[[1;31m483[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m484[0m] [0m{05 000 000} NOP 0 0 (PC: [1;31m182[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m485[0m] [0m{06 801 000} JUMP -1 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m486[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m487[0m] [0m[1;36mClock interrupt number [97] has ocurred[0m
+[0m[[1;31m488[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m489[0m] [0m{05 000 000} NOP 0 0 (PC: [1;31m182[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m490[0m] [0m{06 801 000} JUMP -1 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m491[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m492[0m] [0m[1;36mClock interrupt number [98] has ocurred[0m
+[0m[[1;31m493[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m494[0m] [0m{05 000 000} NOP 0 0 (PC: [1;31m182[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m495[0m] [0m{06 801 000} JUMP -1 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m496[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m497[0m] [0m[1;36mClock interrupt number [99] has ocurred[0m
+[0m[[1;31m498[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m499[0m] [0m{05 000 000} NOP 0 0 (PC: [1;31m182[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m500[0m] [0m{06 801 000} JUMP -1 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m501[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m502[0m] [0m[1;36mClock interrupt number [100] has ocurred[0m
+[0m[[1;31m503[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m504[0m] [0m{05 000 000} NOP 0 0 (PC: [1;31m182[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m505[0m] [0m{06 801 000} JUMP -1 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m506[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m507[0m] [0m[1;36mClock interrupt number [101] has ocurred[0m
+[0m[[1;31m508[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m509[0m] [0m{05 000 000} NOP 0 0 (PC: [1;31m182[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m510[0m] [0m{06 801 000} JUMP -1 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m511[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m512[0m] [0m[1;36mClock interrupt number [102] has ocurred[0m
+[0m[[1;31m513[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m514[0m] [0m{05 000 000} NOP 0 0 (PC: [1;31m182[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m515[0m] [0m{06 801 000} JUMP -1 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m516[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m517[0m] [0m[1;36mClock interrupt number [103] has ocurred[0m
+[0m[[1;31m518[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m519[0m] [0m{05 000 000} NOP 0 0 (PC: [1;31m182[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m520[0m] [0m{06 801 000} JUMP -1 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m521[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m522[0m] [0m[1;36mClock interrupt number [104] has ocurred[0m
+[0m[[1;31m523[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m524[0m] [0m{05 000 000} NOP 0 0 (PC: [1;31m182[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m525[0m] [0m{06 801 000} JUMP -1 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m526[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m527[0m] [0m[1;36mClock interrupt number [105] has ocurred[0m
+[0m[[1;31m528[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m529[0m] [0m{05 000 000} NOP 0 0 (PC: [1;31m182[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m530[0m] [0m{06 801 000} JUMP -1 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m531[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m532[0m] [0m[1;36mClock interrupt number [106] has ocurred[0m
+[0m[[1;31m533[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m534[0m] [0m{05 000 000} NOP 0 0 (PC: [1;31m182[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m535[0m] [0m{06 801 000} JUMP -1 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m536[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m537[0m] [0m[1;36mClock interrupt number [107] has ocurred[0m
+[0m[[1;31m538[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m539[0m] [0m{05 000 000} NOP 0 0 (PC: [1;31m182[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m540[0m] [0m{06 801 000} JUMP -1 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m541[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m542[0m] [0m[1;36mClock interrupt number [108] has ocurred[0m
+[0m[[1;31m543[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m544[0m] [0m{05 000 000} NOP 0 0 (PC: [1;31m182[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m545[0m] [0m{06 801 000} JUMP -1 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m546[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m547[0m] [0m[1;36mClock interrupt number [109] has ocurred[0m
+[0m[[1;31m548[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m549[0m] [0m{05 000 000} NOP 0 0 (PC: [1;31m182[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m550[0m] [0m{06 801 000} JUMP -1 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m551[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m552[0m] [0m[1;36mClock interrupt number [110] has ocurred[0m
+[0m[[1;31m553[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m554[0m] [0m{05 000 000} NOP 0 0 (PC: [1;31m182[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m555[0m] [0m{06 801 000} JUMP -1 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m556[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m557[0m] [0m[1;36mClock interrupt number [111] has ocurred[0m
+[0m[[1;31m558[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m559[0m] [0m{05 000 000} NOP 0 0 (PC: [1;31m182[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m560[0m] [0m{06 801 000} JUMP -1 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m561[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m562[0m] [0m[1;36mClock interrupt number [112] has ocurred[0m
+[0m[[1;31m563[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m564[0m] [0m{05 000 000} NOP 0 0 (PC: [1;31m182[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m565[0m] [0m{06 801 000} JUMP -1 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m566[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m567[0m] [0m[1;36mClock interrupt number [113] has ocurred[0m
+[0m[[1;31m568[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m569[0m] [0m{05 000 000} NOP 0 0 (PC: [1;31m182[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m570[0m] [0m{06 801 000} JUMP -1 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m571[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m572[0m] [0m[1;36mClock interrupt number [114] has ocurred[0m
+[0m[[1;31m573[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m574[0m] [0m{05 000 000} NOP 0 0 (PC: [1;31m182[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m575[0m] [0m{06 801 000} JUMP -1 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m576[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m577[0m] [0m[1;36mClock interrupt number [115] has ocurred[0m
+[0m[[1;31m578[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m579[0m] [0m{05 000 000} NOP 0 0 (PC: [1;31m182[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m580[0m] [0m{06 801 000} JUMP -1 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m581[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m582[0m] [0m[1;36mClock interrupt number [116] has ocurred[0m
+[0m[[1;31m583[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m584[0m] [0m{05 000 000} NOP 0 0 (PC: [1;31m182[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m585[0m] [0m{06 801 000} JUMP -1 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m586[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m587[0m] [0m[1;36mClock interrupt number [117] has ocurred[0m
+[0m[[1;31m588[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m589[0m] [0m{05 000 000} NOP 0 0 (PC: [1;31m182[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m590[0m] [0m{06 801 000} JUMP -1 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m591[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m592[0m] [0m[1;36mClock interrupt number [118] has ocurred[0m
+[0m[[1;31m593[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m594[0m] [0m{05 000 000} NOP 0 0 (PC: [1;31m182[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m595[0m] [0m{06 801 000} JUMP -1 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m596[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m597[0m] [0m[1;36mClock interrupt number [119] has ocurred[0m
+[0m[[1;31m598[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m599[0m] [0m{05 000 000} NOP 0 0 (PC: [1;31m182[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m600[0m] [0m{06 801 000} JUMP -1 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m601[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m602[0m] [0m[1;36mClock interrupt number [120] has ocurred[0m
+[0m[[1;31m603[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m604[0m] [0m{05 000 000} NOP 0 0 (PC: [1;31m182[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m605[0m] [0m{06 801 000} JUMP -1 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m606[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m607[0m] [0m[1;36mClock interrupt number [121] has ocurred[0m
+[0m[[1;31m608[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m609[0m] [0m{05 000 000} NOP 0 0 (PC: [1;31m182[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m610[0m] [0m{06 801 000} JUMP -1 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m611[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m612[0m] [0m[1;36mClock interrupt number [122] has ocurred[0m
+[0m[[1;31m613[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m614[0m] [0m{05 000 000} NOP 0 0 (PC: [1;31m182[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m615[0m] [0m{06 801 000} JUMP -1 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m616[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m617[0m] [0m[1;36mClock interrupt number [123] has ocurred[0m
+[0m[[1;31m618[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m619[0m] [0m{05 000 000} NOP 0 0 (PC: [1;31m182[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m620[0m] [0m{06 801 000} JUMP -1 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m621[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m622[0m] [0m[1;36mClock interrupt number [124] has ocurred[0m
+[0m[[1;31m623[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m624[0m] [0m{05 000 000} NOP 0 0 (PC: [1;31m182[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m625[0m] [0m{06 801 000} JUMP -1 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m626[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m627[0m] [0m[1;36mClock interrupt number [125] has ocurred[0m
+[0m[[1;31m628[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m629[0m] [0m{05 000 000} NOP 0 0 (PC: [1;31m182[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m630[0m] [0m{06 801 000} JUMP -1 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m631[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m632[0m] [0m[1;36mClock interrupt number [126] has ocurred[0m
+[0m[[1;31m633[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m634[0m] [0m{05 000 000} NOP 0 0 (PC: [1;31m182[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m635[0m] [0m{06 801 000} JUMP -1 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m636[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m637[0m] [0m[1;36mClock interrupt number [127] has ocurred[0m
+[0m[[1;31m638[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m639[0m] [0m{05 000 000} NOP 0 0 (PC: [1;31m182[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m640[0m] [0m{06 801 000} JUMP -1 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m641[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m642[0m] [0m[1;36mClock interrupt number [128] has ocurred[0m
+[0m[[1;31m643[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m644[0m] [0m{05 000 000} NOP 0 0 (PC: [1;31m182[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m645[0m] [0m{06 801 000} JUMP -1 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m646[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m647[0m] [0m[1;36mClock interrupt number [129] has ocurred[0m
+[0m[[1;31m648[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m649[0m] [0m{05 000 000} NOP 0 0 (PC: [1;31m182[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m650[0m] [0m{06 801 000} JUMP -1 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m651[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m652[0m] [0m[1;36mClock interrupt number [130] has ocurred[0m
+[0m[[1;31m653[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m654[0m] [0m{05 000 000} NOP 0 0 (PC: [1;31m182[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m655[0m] [0m{06 801 000} JUMP -1 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m656[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m657[0m] [0m[1;36mClock interrupt number [131] has ocurred[0m
+[0m[[1;31m658[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m659[0m] [0m{05 000 000} NOP 0 0 (PC: [1;31m182[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m660[0m] [0m{06 801 000} JUMP -1 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m661[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m662[0m] [0m[1;36mClock interrupt number [132] has ocurred[0m
+[0m[[1;31m663[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m664[0m] [0m{05 000 000} NOP 0 0 (PC: [1;31m182[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m665[0m] [0m{06 801 000} JUMP -1 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m666[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m667[0m] [0m[1;36mClock interrupt number [133] has ocurred[0m
+[0m[[1;31m668[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m669[0m] [0m{05 000 000} NOP 0 0 (PC: [1;31m182[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m670[0m] [0m{06 801 000} JUMP -1 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m671[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m672[0m] [0m[1;36mClock interrupt number [134] has ocurred[0m
+[0m[[1;31m673[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m674[0m] [0m{05 000 000} NOP 0 0 (PC: [1;31m182[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m675[0m] [0m{06 801 000} JUMP -1 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m676[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m677[0m] [0m[1;36mClock interrupt number [135] has ocurred[0m
+[0m[[1;31m678[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m679[0m] [0m{05 000 000} NOP 0 0 (PC: [1;31m182[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m680[0m] [0m{06 801 000} JUMP -1 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m681[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m682[0m] [0m[1;36mClock interrupt number [136] has ocurred[0m
+[0m[[1;31m683[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m684[0m] [0m{05 000 000} NOP 0 0 (PC: [1;31m182[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m685[0m] [0m{06 801 000} JUMP -1 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m686[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m687[0m] [0m[1;36mClock interrupt number [137] has ocurred[0m
+[0m[[1;31m688[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m689[0m] [0m{05 000 000} NOP 0 0 (PC: [1;31m182[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m690[0m] [0m{06 801 000} JUMP -1 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m691[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m692[0m] [0m[1;36mClock interrupt number [138] has ocurred[0m
+[0m[[1;31m693[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m694[0m] [0m{05 000 000} NOP 0 0 (PC: [1;31m182[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m695[0m] [0m{06 801 000} JUMP -1 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m696[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m697[0m] [0m[1;36mClock interrupt number [139] has ocurred[0m
+[0m[[1;31m698[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m699[0m] [0m{05 000 000} NOP 0 0 (PC: [1;31m182[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m700[0m] [0m{06 801 000} JUMP -1 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m701[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m702[0m] [0m[1;36mClock interrupt number [140] has ocurred[0m
+[0m[[1;31m703[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m704[0m] [0m{05 000 000} NOP 0 0 (PC: [1;31m182[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m705[0m] [0m{06 801 000} JUMP -1 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m706[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m707[0m] [0m[1;36mClock interrupt number [141] has ocurred[0m
+[0m[[1;31m708[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m709[0m] [0m{05 000 000} NOP 0 0 (PC: [1;31m182[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m710[0m] [0m{06 801 000} JUMP -1 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m711[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m712[0m] [0m[1;36mClock interrupt number [142] has ocurred[0m
+[0m[[1;31m713[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m714[0m] [0m{05 000 000} NOP 0 0 (PC: [1;31m182[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m715[0m] [0m{06 801 000} JUMP -1 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m716[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m717[0m] [0m[1;36mClock interrupt number [143] has ocurred[0m
+[0m[[1;31m718[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m719[0m] [0m{05 000 000} NOP 0 0 (PC: [1;31m182[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m720[0m] [0m{06 801 000} JUMP -1 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m721[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m722[0m] [0m[1;36mClock interrupt number [144] has ocurred[0m
+[0m[[1;31m723[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m724[0m] [0m{05 000 000} NOP 0 0 (PC: [1;31m182[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m725[0m] [0m{06 801 000} JUMP -1 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m726[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m727[0m] [0m[1;36mClock interrupt number [145] has ocurred[0m
+[0m[[1;31m728[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m729[0m] [0m{05 000 000} NOP 0 0 (PC: [1;31m182[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m730[0m] [0m{06 801 000} JUMP -1 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m731[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m732[0m] [0m[1;36mClock interrupt number [146] has ocurred[0m
+[0m[[1;31m733[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m734[0m] [0m{05 000 000} NOP 0 0 (PC: [1;31m182[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m735[0m] [0m{06 801 000} JUMP -1 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m736[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m737[0m] [0m[1;36mClock interrupt number [147] has ocurred[0m
+[0m[[1;31m738[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m739[0m] [0m{05 000 000} NOP 0 0 (PC: [1;31m182[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m740[0m] [0m{06 801 000} JUMP -1 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m741[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m742[0m] [0m[1;36mClock interrupt number [148] has ocurred[0m
+[0m[[1;31m743[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m744[0m] [0m{05 000 000} NOP 0 0 (PC: [1;31m182[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m745[0m] [0m{06 801 000} JUMP -1 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m746[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m747[0m] [0m[1;36mClock interrupt number [149] has ocurred[0m
+[0m[[1;31m748[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m749[0m] [0m{05 000 000} NOP 0 0 (PC: [1;31m182[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m750[0m] [0m{06 801 000} JUMP -1 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m751[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m752[0m] [0m[1;36mClock interrupt number [150] has ocurred[0m
+[0m[[1;31m753[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m754[0m] [0m{05 000 000} NOP 0 0 (PC: [1;31m182[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m755[0m] [0m{06 801 000} JUMP -1 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m756[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m757[0m] [0m[1;36mClock interrupt number [151] has ocurred[0m
+[0m[[1;31m758[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m759[0m] [0m{05 000 000} NOP 0 0 (PC: [1;31m182[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m760[0m] [0m{06 801 000} JUMP -1 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m761[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m762[0m] [0m[1;36mClock interrupt number [152] has ocurred[0m
+[0m[[1;31m763[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m764[0m] [0m{05 000 000} NOP 0 0 (PC: [1;31m182[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m765[0m] [0m{06 801 000} JUMP -1 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m766[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m767[0m] [0m[1;36mClock interrupt number [153] has ocurred[0m
+[0m[[1;31m768[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m769[0m] [0m{05 000 000} NOP 0 0 (PC: [1;31m182[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m770[0m] [0m{06 801 000} JUMP -1 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m771[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m772[0m] [0m[1;36mClock interrupt number [154] has ocurred[0m
+[0m[[1;31m773[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m774[0m] [0m{05 000 000} NOP 0 0 (PC: [1;31m182[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m775[0m] [0m{06 801 000} JUMP -1 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m776[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m777[0m] [0m[1;36mClock interrupt number [155] has ocurred[0m
+[0m[[1;31m778[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m779[0m] [0m{05 000 000} NOP 0 0 (PC: [1;31m182[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m780[0m] [0m{06 801 000} JUMP -1 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m781[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m782[0m] [0m[1;36mClock interrupt number [156] has ocurred[0m
+[0m[[1;31m783[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m784[0m] [0m{05 000 000} NOP 0 0 (PC: [1;31m182[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m785[0m] [0m{06 801 000} JUMP -1 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m786[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m787[0m] [0m[1;36mClock interrupt number [157] has ocurred[0m
+[0m[[1;31m788[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m789[0m] [0m{05 000 000} NOP 0 0 (PC: [1;31m182[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m790[0m] [0m{06 801 000} JUMP -1 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m791[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m792[0m] [0m[1;36mClock interrupt number [158] has ocurred[0m
+[0m[[1;31m793[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m794[0m] [0m{05 000 000} NOP 0 0 (PC: [1;31m182[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m795[0m] [0m{06 801 000} JUMP -1 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m796[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m797[0m] [0m[1;36mClock interrupt number [159] has ocurred[0m
+[0m[[1;31m798[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m799[0m] [0m{05 000 000} NOP 0 0 (PC: [1;31m182[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m800[0m] [0m{06 801 000} JUMP -1 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m801[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m802[0m] [0m[1;36mClock interrupt number [160] has ocurred[0m
+[0m[[1;31m803[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m804[0m] [0m{05 000 000} NOP 0 0 (PC: [1;31m182[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m805[0m] [0m{06 801 000} JUMP -1 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m806[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m807[0m] [0m[1;36mClock interrupt number [161] has ocurred[0m
+[0m[[1;31m808[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m809[0m] [0m{05 000 000} NOP 0 0 (PC: [1;31m182[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m810[0m] [0m{06 801 000} JUMP -1 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m811[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m812[0m] [0m[1;36mClock interrupt number [162] has ocurred[0m
+[0m[[1;31m813[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m814[0m] [0m{05 000 000} NOP 0 0 (PC: [1;31m182[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m815[0m] [0m{06 801 000} JUMP -1 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m816[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m817[0m] [0m[1;36mClock interrupt number [163] has ocurred[0m
+[0m[[1;31m818[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m819[0m] [0m{05 000 000} NOP 0 0 (PC: [1;31m182[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m820[0m] [0m{06 801 000} JUMP -1 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m821[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m822[0m] [0m[1;36mClock interrupt number [164] has ocurred[0m
+[0m[[1;31m823[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m824[0m] [0m{05 000 000} NOP 0 0 (PC: [1;31m182[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m825[0m] [0m{06 801 000} JUMP -1 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m826[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
+[0m	[[1;31m827[0m] [0m[1;36mClock interrupt number [165] has ocurred[0m
+[0m[[1;31m828[0m] [0m{0D 000 000} IRET 0 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m829[0m] [0m{05 000 000} NOP 0 0 (PC: [1;31m182[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m830[0m] [0m{06 801 000} JUMP -1 0 (PC: [1;31m181[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m0080[0m [[1;31m--------X-------[0m])
+[0m[[1;31m831[0m] [0m{0C 009 000} OS 9 0 (PC: [1;31m246[0m, Accumulator: [1;31m2021[0m, PSW: [1;31m8080[0m [[1;31mM-------X-------[0m])
