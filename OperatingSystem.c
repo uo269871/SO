@@ -567,7 +567,7 @@ void OperatingSystem_MoveToTheBLOCKEDState(int PID) {
 	int val = abs(Processor_GetAccumulator()) + numberOfClockInterrupts + 1;
 	processTable[PID].whenToWakeUp = val;
 
-	if (Heap_add(PID, sleepingProcessesQueue,QUEUE_PRIORITY ,&numberOfSleepingProcesses,PROCESSTABLEMAXSIZE)>=0) {
+	if (Heap_add(PID, sleepingProcessesQueue,QUEUE_WAKEUP,&numberOfSleepingProcesses,PROCESSTABLEMAXSIZE)>=0) {
 		char* name = programList[plIndex]->executableName;
 		state =processTable[PID].state;
 		processTable[PID].state=BLOCKED;
