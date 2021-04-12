@@ -228,8 +228,7 @@ void Processor_DecodeAndExecuteInstruction() {
 			Buses_write_ControlBus_From_To(CPU,MMU);
 
 			// Copy the read data to the accumulator register
-			operand1 += registerMBR_CPU.cell;
-			registerAccumulator_CPU+= operand1;
+			registerAccumulator_CPU = registerMBR_CPU.cell + operand1;
 			registerPC_CPU++;
 			break;
 		// Unknown instruction

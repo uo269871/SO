@@ -512,7 +512,7 @@ void OperatingSystem_PrintReadyToRunQueue(){
 			ComputerSystem_DebugMessage(113,SHORTTERMSCHEDULE,queueNames[j]," ");
 			for (i = 0; i < size; i++){
 				PID = readyToRunQueue[j][i].info;
-				priority = processTable[i].priority;
+				priority = processTable[PID].priority;
 				if(i == 0){
 					if(size == 1){
 						ComputerSystem_DebugMessage(108,SHORTTERMSCHEDULE,PID,priority,"\n");
