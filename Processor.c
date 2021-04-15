@@ -196,7 +196,7 @@ void Processor_DecodeAndExecuteInstruction() {
 				// Show final part of HARDWARE message with CPU registers
 				// Show message: " (PC: registerPC_CPU, Accumulator: registerAccumulator_CPU, PSW: registerPSW_CPU [Processor_ShowPSW()]\n
 				ComputerSystem_DebugMessage(130, HARDWARE,InstructionNames[operationCode],
-					operand1,operand2,OperatingSystem_GetExecutingPID(),registerPC_CPU,registerAccumulator_CPU,registerPSW_CPU,Processor_ShowPSW());
+					operand1,operand2,OperatingSystem_GetExecutingProcessID(),registerPC_CPU,registerAccumulator_CPU,registerPSW_CPU,Processor_ShowPSW());
 				// Not all operating system code is executed in simulated processor, but really must do it... 
 				OperatingSystem_InterruptLogic(operand1);
 				registerPC_CPU++;
@@ -243,7 +243,8 @@ void Processor_DecodeAndExecuteInstruction() {
 	
 	// Show final part of HARDWARE message with	CPU registers
 	// Show message: " (PC: registerPC_CPU, Accumulator: registerAccumulator_CPU, PSW: registerPSW_CPU [Processor_ShowPSW()]\n
-	ComputerSystem_DebugMessage(130, HARDWARE, InstructionNames[operationCode],operand1,operand2,OperatingSystem_GetExecutingPID(),registerPC_CPU,registerAccumulator_CPU,registerPSW_CPU,Processor_ShowPSW());
+	ComputerSystem_DebugMessage(130, HARDWARE, InstructionNames[operationCode],operand1,operand2,
+		OperatingSystem_GetExecutingProcessID(),registerPC_CPU,registerAccumulator_CPU,registerPSW_CPU,Processor_ShowPSW());
 }
 	
 	

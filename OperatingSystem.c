@@ -28,7 +28,7 @@ void OperatingSystem_PrintReadyToRunQueue();
 void OperatingSystem_HandleClockInterrupt();
 void OperatingSystem_MoveToTheBLOCKEDState(int);
 int OperatingSystem_IsMoreImportant(int, int);
-int OperatingSystem_GetExecutingPID();
+int OperatingSystem_GetExecutingProcessID();
 
 // The process table
 PCB processTable[PROCESSTABLEMAXSIZE];
@@ -598,6 +598,6 @@ void OperatingSystem_MoveToTheBLOCKEDState(int PID) {
 	}
 }
 
-int OperatingSystem_GetExecutingPID(){
+int OperatingSystem_GetExecutingProcessID(){
 	return executingProcessID;
 }
