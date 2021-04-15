@@ -28,6 +28,7 @@ void OperatingSystem_PrintReadyToRunQueue();
 void OperatingSystem_HandleClockInterrupt();
 void OperatingSystem_MoveToTheBLOCKEDState(int);
 int OperatingSystem_IsMoreImportant(int, int);
+int OperatingSystem_GetExecutingPID();
 
 // The process table
 PCB processTable[PROCESSTABLEMAXSIZE];
@@ -592,4 +593,8 @@ void OperatingSystem_MoveToTheBLOCKEDState(int PID) {
 		OperatingSystem_ShowTime(SYSPROC);
 		ComputerSystem_DebugMessage(110,SYSPROC,PID,name,statesNames[state],statesNames[BLOCKED]);
 	}
+}
+
+int OperatingSystem_GetExecutingPID(){
+	return executingProcessID;
 }
