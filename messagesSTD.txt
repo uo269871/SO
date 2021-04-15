@@ -18,3 +18,6 @@
 115,Process [@G%d – %s@@] will transfer the control of the processor to process [@G%d – %s@@]\n
 120,@CClock interrupt number [%d] has ocurred@@\n
 121,Process [@G%d – %s@@] will be thrown out of the processor by process [@G%d – %s@@]\n
+
+// Examen-simulacro-2020
+550,The @G%s@@ for process [@G%d - %s@@] is @G%d@@\n

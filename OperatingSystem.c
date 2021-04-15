@@ -4,6 +4,7 @@
 #include "Processor.h"
 #include "Buses.h"
 #include "Heap.h"
+#include "Clock.h" // Examen-simulacro-2020
 #include <string.h>
 #include <ctype.h>
 #include <stdlib.h>
@@ -269,7 +270,8 @@ void OperatingSystem_PCBInitialization(int PID, int initialPhysicalAddress, int 
 		processTable[PID].copyOfPSWRegister=0;
 		processTable[PID].queueID = USERPROCESSQUEUE;
 	}
-
+	processTable[PID].creationTime = Clock_GetTime(); // Examen-simulacro-2020
+	processTable[PID].isFirstTime = 1;// Examen-simulacro-2020
 	char* name = programList[processPLIndex]->executableName;
 	OperatingSystem_ShowTime(SYSPROC);
 	ComputerSystem_DebugMessage(111,SYSPROC,PID,name);
@@ -287,6 +289,7 @@ void OperatingSystem_MoveToTheREADYState(int PID) {
 		char* name = programList[plIndex]->executableName;
 		state =processTable[PID].state;
 		processTable[PID].state=READY;
+		processTable[PID].timeWhenStartsToWait = Clock_GetTime();// Examen-simulacro-2020
 		OperatingSystem_ShowTime(SYSPROC);
 		ComputerSystem_DebugMessage(110,SYSPROC,PID,name,statesNames[state],statesNames[READY]);
 		// OperatingSystem_PrintReadyToRunQueue(); 
@@ -329,10 +332,14 @@ void OperatingSystem_Dispatch(int PID) {
 	plIndex = processTable[PID].programListIndex;
 	char* name = programList[plIndex]->executableName;
 	state =processTable[PID].state;
-	
+	processTable[PID].waitingTime = processTable[PID].waitingTime +(Clock_GetTime() - processTable[PID].timeWhenStartsToWait);// Examen-simulacro-2020
 	// The process identified by PID becomes the current executing process
 	executingProcessID=PID;
 	// Change the process' state
+	if(processTable[PID].isFirstTime){// Examen-simulacro-2020
+		processTable[PID].isFirstTime = 0;
+		processTable[PID].responseTime = Clock_GetTime() - processTable[PID].creationTime;
+	}
 	processTable[PID].state=EXECUTING;
 	OperatingSystem_ShowTime(SYSPROC);
 	ComputerSystem_DebugMessage(110,SYSPROC,PID,name,statesNames[state],statesNames[EXECUTING]);
@@ -403,12 +410,18 @@ void OperatingSystem_TerminateProcess() {
 	plIndex = processTable[executingProcessID].programListIndex;
 	char* name = programList[plIndex]->executableName;
 	state =processTable[executingProcessID].state;
-  	
+  	processTable[executingProcessID].returnTime = Clock_GetTime() - processTable[executingProcessID].creationTime;// Examen-simulacro-2020
 	processTable[executingProcessID].state=EXIT;
 
 	OperatingSystem_ShowTime(SYSPROC);
 	ComputerSystem_DebugMessage(110,SYSPROC,executingProcessID,name,statesNames[state],statesNames[EXIT]);
-	
+	OperatingSystem_ShowTime(SYSPROC);// Examen-simulacro-2020
+	ComputerSystem_DebugMessage(550,SYSPROC,"response time",executingProcessID,name,processTable[executingProcessID].responseTime);// Examen-simulacro-2020
+	OperatingSystem_ShowTime(SYSPROC);// Examen-simulacro-2020
+	ComputerSystem_DebugMessage(550,SYSPROC,"return time",executingProcessID,name,processTable[executingProcessID].returnTime);// Examen-simulacro-2020
+	OperatingSystem_ShowTime(SYSPROC);// Examen-simulacro-2020
+	ComputerSystem_DebugMessage(550,SYSPROC,"waiting time",executingProcessID,name,processTable[executingProcessID].waitingTime);// Examen-simulacro-2020
+
 	if (programList[processTable[executingProcessID].programListIndex]->type==USERPROGRAM) 
 		// One more user process that has terminated
 		numberOfNotTerminatedUserProcesses--;

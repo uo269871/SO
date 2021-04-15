@@ -44,6 +44,14 @@ typedef struct {
 	int accumulator;
 	int whenToWakeUp;
 	int queueID;
+
+	int creationTime; // Examen-simulacro-2020
+	int timeWhenStartsToWait;// Examen-simulacro-2020
+	int isFirstTime;// Examen-simulacro-2020
+
+	int responseTime;// Examen-simulacro-2020
+	int returnTime;// Examen-simulacro-2020
+	int waitingTime;// Examen-simulacro-2020
 } PCB;
 
 // These "extern" declaration enables other source code files to gain access
