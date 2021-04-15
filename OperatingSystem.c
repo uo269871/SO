@@ -91,6 +91,9 @@ void OperatingSystem_Initialize(int daemonsIndex) {
 	// Include in program list  all system daemon processes
 	OperatingSystem_PrepareDaemons(daemonsIndex);
 	
+	ComputerSystem_FillInArrivalTimeQueue();
+	OperatingSystem_PrintStatus();
+
 	// Create all user processes from the information given in the command line
 	OperatingSystem_LongTermScheduler();
 
