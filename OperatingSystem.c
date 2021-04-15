@@ -98,7 +98,7 @@ void OperatingSystem_Initialize(int daemonsIndex) {
 	// Create all user processes from the information given in the command line
 	OperatingSystem_LongTermScheduler();
 
-	if(numberOfNotTerminatedUserProcesses <= 0){
+	if(numberOfNotTerminatedUserProcesses <= 0 || numberOfProgramsInArrivalTimeQueue <= 0){
 		OperatingSystem_ReadyToShutdown();
 	}
 	
@@ -418,7 +418,7 @@ void OperatingSystem_TerminateProcess() {
 		// One more user process that has terminated
 		numberOfNotTerminatedUserProcesses--;
 	
-	if (numberOfNotTerminatedUserProcesses==0) {
+	if (numberOfNotTerminatedUserProcesses==0 && numberOfProgramsInArrivalTimeQueue == 0) {
 		if (executingProcessID==sipID) {
 			// finishing sipID, change PC to address of OS HALT instruction
 			OperatingSystem_TerminatingSIP();
