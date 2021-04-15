@@ -20,6 +20,11 @@
 75,[@G%d@@, %d, @R%d@@]
 76,\t\tPID: @G%d@@ -> %s\n
 
+// 77,PID association with program's name:\n
+78,\t\t[@G%s@@, @R%d@@, @G%s@@]\n
+79,Zombie process [@R%d@@ -> @R%s@@], with size [@R%d@@] and initial address [@R%d@@] is removed from system\n
+
+
 // Assert system messages
 81,Using asserts file: %s\nMaximum number of asserts: %d\n
 82,%d Asserts Loaded\n

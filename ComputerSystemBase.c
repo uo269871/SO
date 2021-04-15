@@ -29,6 +29,12 @@ int intervalBetweenInterrupts = DEFAULT_INTERVAL_BETWEEN_INTERRUPTS; // Default 
 // Only one colour messages. Set to 1 for more colours checking uppercase in debugLevel
 int COLOURED = 0 ;
 
+#ifdef ARRIVALQUEUE
+	char * typeProgramNames []={"USER","DAEMONS"}; 
+	extern heapItem arrivalTimeQueue[];
+	extern int numberOfProgramsInArrivalTimeQueue;
+#endif
+
 // Fill in the array named userProgramsList with the information given
 // by the user in the command line
 // IT IS NOT NECESSARY TO COMPLETELY UNDERSTAND THIS FUNCTION
@@ -205,3 +211,36 @@ void ComputerSystem_DebugMessage(int msgNo, char section, ...) {
 void ComputerSystem_ShowTime(char section) {
       ComputerSystem_DebugMessage(Processor_PSW_BitState(EXECUTION_MODE_BIT)?95:94,section,Clock_GetTime());
 }
+
+// Fill ArrivalTimeQueue heap with user program from parameters and daemons 
+void ComputerSystem_FillInArrivalTimeQueue() {
+#ifdef ARRIVALQUEUE
+
+  int arrivalIndex = 0; 
+
+	while (programList[arrivalIndex]!=NULL && arrivalIndex<PROGRAMSMAXNUMBER) {
+	  Heap_add(arrivalIndex,arrivalTimeQueue,QUEUE_ARRIVAL,&arrivalIndex,PROGRAMSMAXNUMBER);
+	}
+	numberOfProgramsInArrivalTimeQueue=arrivalIndex;
+#endif
+}
+
+// Print arrivalTiemQueue program information
+void ComputerSystem_PrintArrivalTimeQueue(){
+#ifdef ARRIVALQUEUE
+  int i;
+  
+  if (numberOfProgramsInArrivalTimeQueue>0) {
+	OperatingSystem_ShowTime(LONGTERMSCHEDULE);
+	// Show message "Arrival Time Queue: "
+	ComputerSystem_DebugMessage(100,LONGTERMSCHEDULE,"Arrival Time Queue:\n");
+	for (i=0; i< numberOfProgramsInArrivalTimeQueue; i++) {
+	  // Show message [executableName,arrivalTime]
+	  ComputerSystem_DebugMessage(78,LONGTERMSCHEDULE,programList[arrivalTimeQueue[i].info]->executableName,
+			programList[arrivalTimeQueue[i].info]->arrivalTime,
+			typeProgramNames[programList[arrivalTimeQueue[i].info]->type]);
+	}
+  }
+ #endif
+}
+

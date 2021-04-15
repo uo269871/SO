@@ -18,15 +18,20 @@ int OperatingSystem_PrepareTeachersDaemons(int);
 void OperatingSystem_ShowTime(char);
 void OperatingSystem_PrintStatus();
 void OperatingSystem_PrintReadyToRunQueue();
-void OperatingSystem_PrepareDaemons(int);
-int OperatingSystem_PrepareTeachersDaemons(int);
+int OperatingSystem_IsThereANewProgram();
+
+#define EMPTYQUEUE -1
+#define NO 0
+#define YES 1
 
 #ifdef SLEEPINGQUEUE
 extern heapItem sleepingProcessesQueue[];
 extern int numberOfSleepingProcesses; 
 #endif
 
-// Begin indes for daemons in programList
-// extern int baseDaemonsInProgramList; 
+#ifdef ARRIVALQUEUE
+extern int numberOfProgramsInArrivalTimeQueue;
+extern heapItem arrivalTimeQueue[];
+#endif
 
 #endif

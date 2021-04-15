@@ -35,10 +35,24 @@ int OperatingSystem_ObtainAnEntryInTheProcessTable() {
 
 	while (index<PROCESSTABLEMAXSIZE) {
 		entry = (orig+index)%PROCESSTABLEMAXSIZE;
-		if (processTable[entry].busy==0)
+		if (processTable[entry].busy==0) {
 			return entry;
-		else
-			index++;
+		}
+		else {
+			if (++index==PROCESSTABLEMAXSIZE) { // if no entries free, remove zombie proceses
+				int i;
+				for (i=0;i<PROCESSTABLEMAXSIZE;i++)
+					if (processTable[i].busy && (processTable[i].state==EXIT)) {
+						OperatingSystem_ShowTime(SYSPROC);
+						ComputerSystem_DebugMessage(79,SYSPROC
+							,i,programList[processTable[i].programListIndex]->executableName
+							,processTable[i].processSize
+							,processTable[i].initialPhysicalAddress);
+						processTable[i].busy=0;
+						index=0; // New search after liberation of PCB
+					}
+			}
+		}
 	}
 	return NOFREEENTRY;
 }
@@ -215,13 +229,20 @@ int OperatingSystem_PrepareTeachersDaemons(int programListDaemonsBase){
 
 
 void OperatingSystem_ReadyToShutdown(){
+	int sipIdPCtoShutdown=processTable[sipID].initialPhysicalAddress+processTable[sipID].processSize-1;
 	// Simulation must finish (done by modifying the PC of the System Idle Process so it points to its 'TRAP 3' instruction,
 	// located at the last memory position used by that process, and dispatching sipId (next ShortTermSheduled)
-	processTable[sipID].copyOfPCRegister=processTable[sipID].initialPhysicalAddress+processTable[sipID].processSize-1;
+	if (executingProcessID==sipID)
+		Processor_CopyInSystemStack(MAINMEMORYSIZE-1, sipIdPCtoShutdown);
+	else
+		processTable[sipID].copyOfPCRegister=sipIdPCtoShutdown;
 }
 
 void OperatingSystem_TerminatingSIP() {
-	Processor_CopyInSystemStack(MAINMEMORYSIZE-1,OS_address_base+1);
+	processTable[sipID].copyOfPCRegister=OS_address_base+1; 
+	Processor_CopyInSystemStack(MAINMEMORYSIZE-1,processTable[sipID].copyOfPCRegister);
+	processTable[sipID].copyOfPSWRegister|= ((unsigned int) 1) << INTERRUPT_MASKED_BIT;
+	Processor_CopyInSystemStack(MAINMEMORYSIZE-2,processTable[sipID].copyOfPSWRegister);
 	executingProcessID=NOPROCESS;
 }
 
@@ -237,7 +258,7 @@ void OperatingSystem_PrintStatus(){
 	OperatingSystem_PrintReadyToRunQueue();  // Show Ready to run queues implemented for students
 	OperatingSystem_PrintSleepingProcessQueue(); // Show Sleeping process queue
 	OperatingSystem_PrintProcessTableAssociation(); // Show PID-Program's name association
-
+	ComputerSystem_PrintArrivalTimeQueue(); // Show arrival queue of programs
 }
 
  // Show Executing process information
@@ -267,8 +288,10 @@ void OperatingSystem_PrintSleepingProcessQueue(){
 	if (numberOfSleepingProcesses>0)
 		for (i=0; i< numberOfSleepingProcesses; i++) {
 			// Show message [PID, priority, whenToWakeUp]
-			ComputerSystem_DebugMessage(75,SHORTTERMSCHEDULE,
-			sleepingProcessesQueue[i].info,processTable[sleepingProcessesQueue[i].info].priority,processTable[sleepingProcessesQueue[i].info].whenToWakeUp);
+			ComputerSystem_DebugMessage(75,SHORTTERMSCHEDULE
+				, sleepingProcessesQueue[i].info
+				, processTable[sleepingProcessesQueue[i].info].priority
+				, processTable[sleepingProcessesQueue[i].info].whenToWakeUp);
 			if (i<numberOfSleepingProcesses-1)
 	  			ComputerSystem_DebugMessage(100,SHORTTERMSCHEDULE,", ");
   		}
@@ -290,5 +313,31 @@ void OperatingSystem_PrintProcessTableAssociation() {
   		ComputerSystem_DebugMessage(76,SHORTTERMSCHEDULE,i,programList[processTable[i].programListIndex]->executableName);
   	}
   }
+}
+
+// This function returns:
+// 		EMPTYQUEUE (-1) if no programs in arrivalTimeQueue
+//		YES (1) if any program arrivalTime is now
+//		NO (0) else
+// considered by the LTS to create processes at the current time
+int OperatingSystem_IsThereANewProgram() {
+#ifdef ARRIVALQUEUE
+        int currentTime;
+		int programArrivalTime;
+		int indexInProgramList = Heap_getFirst(arrivalTimeQueue,numberOfProgramsInArrivalTimeQueue);
+
+		if (indexInProgramList < 0)
+		  return EMPTYQUEUE;  // No new programs in command line list of programs
+		
+		// Get the current simulation time
+        currentTime = Clock_GetTime();
+		
+		// Get arrivalTime of next program
+		programArrivalTime = programList[indexInProgramList]->arrivalTime; 
+
+		if (programArrivalTime <= currentTime)
+		  return YES;  //  There'is new program to start
+#endif		 
+		return NO;  //  No program in current time
 }
 
