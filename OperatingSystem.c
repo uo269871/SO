@@ -542,7 +542,7 @@ void OperatingSystem_HandleClockInterrupt(){
 	OperatingSystem_ShowTime(INTERRUPT);
 	ComputerSystem_DebugMessage(120,INTERRUPT,numberOfClockInterrupts);
 
-	int wokenUpProcesses, selProcess;	
+	int wokenUpProcesses, selProcess, newCreated;	
 	wokenUpProcesses = 0;
 
 	while (numberOfSleepingProcesses > 0 && processTable[Heap_getFirst(sleepingProcessesQueue,numberOfSleepingProcesses)].whenToWakeUp == numberOfClockInterrupts){
@@ -551,7 +551,9 @@ void OperatingSystem_HandleClockInterrupt(){
 		wokenUpProcesses++;
 	}
 
-	if(wokenUpProcesses > 0){
+	newCreated = OperatingSystem_LongTermScheduler();
+
+	if(wokenUpProcesses > 0 || newCreated > 0){
 		OperatingSystem_PrintStatus();
 		selProcess = OperatingSystem_ShortTermScheduler();
 		if (OperatingSystem_IsMoreImportant(selProcess,executingProcessID)){
