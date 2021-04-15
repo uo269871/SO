@@ -144,7 +144,8 @@ int OperatingSystem_LongTermScheduler() {
 	int PID, i,
 		numberOfSuccessfullyCreatedProcesses=0;
 	
-	for (i=0; programList[i]!=NULL && i<PROGRAMSMAXNUMBER ; i++) {
+	while (OperatingSystem_IsThereANewProgram() == YES) {
+		i = Heap_poll(arrivalTimeQueue, QUEUE_ARRIVAL, &numberOfProgramsInArrivalTimeQueue);
 		PID=OperatingSystem_CreateProcess(i);
 		switch (PID){
 		case NOFREEENTRY:
