@@ -42,4 +42,6 @@ typedef struct ProgramData {
 extern PROGRAMS_DATA *programList[];
 extern char STUDENT_MESSAGES_FILE[];
 
+#define ARRIVALQUEUE
+
 #endif

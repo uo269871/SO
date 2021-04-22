@@ -28,6 +28,7 @@ void OperatingSystem_PrintReadyToRunQueue();
 void OperatingSystem_HandleClockInterrupt();
 void OperatingSystem_MoveToTheBLOCKEDState(int);
 int OperatingSystem_IsMoreImportant(int, int);
+int OperatingSystem_GetExecutingProcessID();
 
 // The process table
 PCB processTable[PROCESSTABLEMAXSIZE];
@@ -91,10 +92,13 @@ void OperatingSystem_Initialize(int daemonsIndex) {
 	// Include in program list  all system daemon processes
 	OperatingSystem_PrepareDaemons(daemonsIndex);
 	
+	ComputerSystem_FillInArrivalTimeQueue();
+	OperatingSystem_PrintStatus();
+
 	// Create all user processes from the information given in the command line
 	OperatingSystem_LongTermScheduler();
 
-	if(numberOfNotTerminatedUserProcesses <= 0){
+	if(numberOfNotTerminatedUserProcesses <= 0 || numberOfProgramsInArrivalTimeQueue <= 0){
 		OperatingSystem_ReadyToShutdown();
 	}
 	
@@ -140,7 +144,8 @@ int OperatingSystem_LongTermScheduler() {
 	int PID, i,
 		numberOfSuccessfullyCreatedProcesses=0;
 	
-	for (i=0; programList[i]!=NULL && i<PROGRAMSMAXNUMBER ; i++) {
+	while (OperatingSystem_IsThereANewProgram() == YES) {
+		i = Heap_poll(arrivalTimeQueue, QUEUE_ARRIVAL, &numberOfProgramsInArrivalTimeQueue);
 		PID=OperatingSystem_CreateProcess(i);
 		switch (PID){
 		case NOFREEENTRY:
@@ -413,7 +418,7 @@ void OperatingSystem_TerminateProcess() {
 		// One more user process that has terminated
 		numberOfNotTerminatedUserProcesses--;
 	
-	if (numberOfNotTerminatedUserProcesses==0) {
+	if (numberOfNotTerminatedUserProcesses==0 && numberOfProgramsInArrivalTimeQueue == 0) {
 		if (executingProcessID==sipID) {
 			// finishing sipID, change PC to address of OS HALT instruction
 			OperatingSystem_TerminatingSIP();
@@ -537,7 +542,7 @@ void OperatingSystem_HandleClockInterrupt(){
 	OperatingSystem_ShowTime(INTERRUPT);
 	ComputerSystem_DebugMessage(120,INTERRUPT,numberOfClockInterrupts);
 
-	int wokenUpProcesses, selProcess;	
+	int wokenUpProcesses, selProcess, newCreated;	
 	wokenUpProcesses = 0;
 
 	while (numberOfSleepingProcesses > 0 && processTable[Heap_getFirst(sleepingProcessesQueue,numberOfSleepingProcesses)].whenToWakeUp == numberOfClockInterrupts){
@@ -546,7 +551,9 @@ void OperatingSystem_HandleClockInterrupt(){
 		wokenUpProcesses++;
 	}
 
-	if(wokenUpProcesses > 0){
+	newCreated = OperatingSystem_LongTermScheduler();
+
+	if(wokenUpProcesses > 0 || newCreated > 0){
 		OperatingSystem_PrintStatus();
 		selProcess = OperatingSystem_ShortTermScheduler();
 		if (OperatingSystem_IsMoreImportant(selProcess,executingProcessID)){
@@ -561,10 +568,17 @@ void OperatingSystem_HandleClockInterrupt(){
 			Heap_add(selProcess, readyToRunQueue[processTable[selProcess].queueID],QUEUE_PRIORITY,
 					&numberOfReadyToRunProcesses[processTable[selProcess].queueID],PROCESSTABLEMAXSIZE);
 		}
+	} 
+	if (wokenUpProcesses == 0 && newCreated == 0 && numberOfNotTerminatedUserProcesses == 0 && numberOfProgramsInArrivalTimeQueue == 0){
+		OperatingSystem_TerminatingSIP();
+		OperatingSystem_ReadyToShutdown();
 	}
 } 
 
 int OperatingSystem_IsMoreImportant(int PID1, int PID2){
+	if(PID2 == NOPROCESS){
+		return 1;
+	}
 	if(processTable[PID1].queueID < processTable[PID2].queueID){
 		return 1;
 	}
@@ -589,4 +603,8 @@ void OperatingSystem_MoveToTheBLOCKEDState(int PID) {
 		OperatingSystem_ShowTime(SYSPROC);
 		ComputerSystem_DebugMessage(110,SYSPROC,PID,name,statesNames[state],statesNames[BLOCKED]);
 	}
+}
+
+int OperatingSystem_GetExecutingProcessID(){
+	return executingProcessID;
 }
