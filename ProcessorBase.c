@@ -20,6 +20,10 @@ extern int interruptLines_CPU; // Processor interrupt lines
 extern int interruptVectorTable[];
 extern char pswmask []; 
 
+#ifdef MULTIPLE_EXCEPTIONS
+extern int registerB_CPU; // Another General purpose register
+#endif
+
 char *InstructionNames[] = {
 "NONEXISTING_INSTRUCTION",
 #define INST(name) #name, // #name cast parameter name to String
@@ -249,4 +253,12 @@ int Processor_ToInstruction(char * operation) {
 		if (strcasecmp(InstructionNames[i],operation)==0)
 			return i;
 	return NONEXISTING_INST;
+}
+
+// Function to raise an exception. Used after Exercise 1-c of V4
+void Processor_RaiseException(int typeOfException) {
+	Processor_RaiseInterrupt(EXCEPTION_BIT);
+#ifdef MULTIPLE_EXCEPTIONS
+	registerB_CPU=typeOfException;
+#endif
 }

@@ -58,5 +58,6 @@ int Processor_DecodeOperand1(BUSDATACELL);
 int Processor_DecodeOperand2(BUSDATACELL);
 void Processor_GetCodedInstruction(char * , BUSDATACELL );
 int Processor_ToInstruction(char *); 
+void Processor_RaiseException(int);
 
 #endif

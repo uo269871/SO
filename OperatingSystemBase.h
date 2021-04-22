@@ -19,6 +19,8 @@ void OperatingSystem_ShowTime(char);
 void OperatingSystem_PrintStatus();
 void OperatingSystem_PrintReadyToRunQueue();
 int OperatingSystem_IsThereANewProgram();
+int OperatingSystem_InitializePartitionTable();
+void OperatingSystem_ShowPartitionTable(char *);
 
 #define EMPTYQUEUE -1
 #define NO 0
@@ -32,6 +34,17 @@ extern int numberOfSleepingProcesses;
 #ifdef ARRIVALQUEUE
 extern int numberOfProgramsInArrivalTimeQueue;
 extern heapItem arrivalTimeQueue[];
+#endif
+
+#ifdef MEMCONFIG
+typedef struct {
+     int initAddress; // Lowest physical address of the partition
+     int size; // Size of the partition in memory positions
+     int PID; // PID of the process using the partition, or NOPROCESS if it's free
+} PARTITIONDATA;
+
+#define PARTITIONTABLEMAXSIZE PROCESSTABLEMAXSIZE*2
+extern PARTITIONDATA partitionsTable[PARTITIONTABLEMAXSIZE];
 #endif
 
 #endif

@@ -1,3 +1,9 @@
+// Memory System messages
+55,Main memory state (@G%s@@):\n
+56,\t\t[@G%d@@] [@G%d@@ -> @G%d@@]
+57,[@G%d - %s@@]\n
+58,[@G%s@@]\n
+
 // Message system messages
 60,Illegal Message Number in line @R%d@@ of file @R%s@@\n
 61,Illegal Message Format in line @R%d@@ of file @R%s@@\n
@@ -20,7 +26,6 @@
 75,[@G%d@@, %d, @R%d@@]
 76,\t\tPID: @G%d@@ -> %s\n
 
-// 77,PID association with program's name:\n
 78,\t\t[@G%s@@, @R%d@@, @G%s@@]\n
 79,Zombie process [@R%d@@ -> @R%s@@], with size [@R%d@@] and initial address [@R%d@@] is removed from system\n
 
