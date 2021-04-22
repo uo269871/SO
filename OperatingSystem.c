@@ -568,10 +568,17 @@ void OperatingSystem_HandleClockInterrupt(){
 			Heap_add(selProcess, readyToRunQueue[processTable[selProcess].queueID],QUEUE_PRIORITY,
 					&numberOfReadyToRunProcesses[processTable[selProcess].queueID],PROCESSTABLEMAXSIZE);
 		}
+	} 
+	if (wokenUpProcesses == 0 && newCreated == 0 && numberOfNotTerminatedUserProcesses == 0 && numberOfProgramsInArrivalTimeQueue == 0){
+		OperatingSystem_TerminatingSIP();
+		OperatingSystem_ReadyToShutdown();
 	}
 } 
 
 int OperatingSystem_IsMoreImportant(int PID1, int PID2){
+	if(PID2 == NOPROCESS){
+		return 1;
+	}
 	if(processTable[PID1].queueID < processTable[PID2].queueID){
 		return 1;
 	}
