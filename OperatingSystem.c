@@ -257,12 +257,12 @@ int OperatingSystem_ObtainMainMemory(int processSize, int PID, int plIndex) {
 	ComputerSystem_DebugMessage(142,SYSMEM,PID,programList[plIndex]->executableName,processSize);
 	int partition;
 	partition = OperatingSystem_CheckPartitions(processSize);
-
+	
 	if(partition < 0){
 		return partition;
 	}
 	else {
-		int i, size = MAINMEMORYSECTIONSIZE;
+		int i, size = MAINMEMORYSIZE;
 		for(i = 0; i < PARTITIONTABLEMAXSIZE; i++){
 			if(processSize <= partitionsTable[i].size && partitionsTable[i].PID == NOPROCESS && partitionsTable[i].size < size){
 				size = partitionsTable[i].size;
