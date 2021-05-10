@@ -258,26 +258,32 @@ int OperatingSystem_ObtainMainMemory(int processSize, int PID, int plIndex) {
 	int partition;
 	partition = OperatingSystem_CheckPartitions(processSize);
 
-	return partition;
+	if(partition < 0){
+		return partition;
+	}
+	else {
+		int i, size = MAINMEMORYSECTIONSIZE;
+		for(i = 0; i < PARTITIONTABLEMAXSIZE; i++){
+			if(processSize <= partitionsTable[i].size && partitionsTable[i].PID == NOPROCESS && partitionsTable[i].size < size){
+				size = partitionsTable[i].size;
+				partition = i;
+			}
+		}
+	}
 
- 	if (processSize>MAINMEMORYSECTIONSIZE)
-		return TOOBIGPROCESS;
-	
- 	return PID*MAINMEMORYSECTIONSIZE;
+	return partition;
 }
 
 int OperatingSystem_CheckPartitions(int processSize){
 	int i;
-	int partition = -1;
 	int biggestPartition = 0;
 	int freePartitions = 0;
 
-	for(i = PARTITIONTABLEMAXSIZE - 1; i >= 0 ; i--){
+	for(i = 0 - 1; i < PARTITIONTABLEMAXSIZE ; i++){
 		if(partitionsTable[i].size >= biggestPartition){
 			biggestPartition = partitionsTable[i].size;
 		}
 		if(processSize <= partitionsTable[i].size && partitionsTable[i].PID == NOPROCESS){
-			partition = i;
 			freePartitions++;
 		}
 	}
@@ -289,7 +295,7 @@ int OperatingSystem_CheckPartitions(int processSize){
 		return MEMORYFULL;
 	}
 
-	return partition;
+	return 0;
 }
 
 void OperatingSystem_AssignPartition(int PID, int partition){
@@ -297,6 +303,8 @@ void OperatingSystem_AssignPartition(int PID, int partition){
 	OperatingSystem_ShowTime(SYSMEM);
 	ComputerSystem_DebugMessage(143,SYSMEM,partition,partitionsTable[partition].initAddress,partitionsTable[partition].size,
 		PID,programList[processTable[PID].programListIndex]->executableName);
+	OperatingSystem_ShowTime(SYSPROC);
+	ComputerSystem_DebugMessage(111,SYSPROC,PID,programList[processTable[PID].programListIndex]->executableName);
 }
 
 // Assign initial values to all fields inside the PCB
@@ -319,10 +327,6 @@ void OperatingSystem_PCBInitialization(int PID, int initialPhysicalAddress, int 
 		processTable[PID].copyOfPSWRegister=0;
 		processTable[PID].queueID = USERPROCESSQUEUE;
 	}
-
-	char* name = programList[processPLIndex]->executableName;
-	OperatingSystem_ShowTime(SYSPROC);
-	ComputerSystem_DebugMessage(111,SYSPROC,PID,name);
 }
 
 
