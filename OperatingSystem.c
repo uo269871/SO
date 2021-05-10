@@ -238,7 +238,9 @@ int OperatingSystem_CreateProcess(int indexOfExecutableProgram) {
 	
 	// PCB initialization
 	OperatingSystem_PCBInitialization(PID, partitionsTable[chosenPartition].initAddress, processSize, priority, indexOfExecutableProgram);
+	OperatingSystem_ShowPartitionTable("before allocating memory");
 	OperatingSystem_AssignPartition(PID,chosenPartition);
+	OperatingSystem_ShowPartitionTable("after allocating memory");
 	// Show message "Process [PID] created from program [executableName]\n"
 	OperatingSystem_ShowTime(INIT);
 	ComputerSystem_DebugMessage(70,INIT,PID,executableProgram->executableName);
