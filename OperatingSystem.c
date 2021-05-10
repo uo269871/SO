@@ -400,6 +400,9 @@ void OperatingSystem_HandleException() {
 		case INVALIDPROCESSORMODE:
 			message = "invalid processor mode";
 			break;
+		case INVALIDINSTRUCTION:
+			message = "invalid instruction";
+			break;
 	}
 	OperatingSystem_ShowTime(INTERRUPT);
 	ComputerSystem_DebugMessage(140,INTERRUPT,executingProcessID,programList[processTable[executingProcessID].programListIndex]->executableName,message);

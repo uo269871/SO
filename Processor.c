@@ -234,8 +234,7 @@ void Processor_DecodeAndExecuteInstruction() {
 			break;
 		// Unknown instruction
 		default : 
-			operationCode=NONEXISTING_INST;
-			registerPC_CPU++;
+			Processor_RaiseException(INVALIDINSTRUCTION);
 			break;
 	}
 	
