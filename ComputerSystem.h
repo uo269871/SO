@@ -27,6 +27,8 @@ void ComputerSystem_PrintProgramList();
 #define ERROR 'e'				// Error messages
 #define CLOCK 'c'				// Clock time messages
 
+#define ARRIVALQUEUE
+
 // Basic data to collect about every program to be created
 // User programs specified in the command line: name of the file, the time of its arrival time
 // 												to the system (0, by default), and type USERPROGRAM
@@ -41,7 +43,5 @@ typedef struct ProgramData {
 // to the variables "programList", etc.
 extern PROGRAMS_DATA *programList[];
 extern char STUDENT_MESSAGES_FILE[];
-
-#define ARRIVALQUEUE
 
 #endif

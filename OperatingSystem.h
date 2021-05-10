@@ -57,5 +57,6 @@ void OperatingSystem_Initialize();
 void OperatingSystem_InterruptLogic(int);
 // void OperatingSystem_PrepareDaemons();
 int OperatingSystem_PrepareStudentsDaemons(int);
+int OperatingSystem_GetExecutingProcessID();
 
 #endif
