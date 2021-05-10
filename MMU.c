@@ -31,6 +31,7 @@ void MMU_SetCTRL (int ctrl) {
 				else {
 					// Fail
 					registerCTRL_MMU |= CTRL_FAIL;
+					Processor_RaiseException(INVALIDADDRESS);
 				}
 			}
 			else // Non-Protected mode
@@ -48,6 +49,7 @@ void MMU_SetCTRL (int ctrl) {
 				else {
 					// Fail
 					registerCTRL_MMU |= CTRL_FAIL;
+					Processor_RaiseException(INVALIDADDRESS);
 				}
 			break;
   	case CTRLWRITE:
@@ -64,6 +66,7 @@ void MMU_SetCTRL (int ctrl) {
 				else {
 					// Fail
 					registerCTRL_MMU |= CTRL_FAIL;
+					Processor_RaiseException(INVALIDADDRESS);
 				}
 			else   // Non-Protected mode
 				if (registerMAR_MMU<registerLimit_MMU) {
@@ -80,10 +83,12 @@ void MMU_SetCTRL (int ctrl) {
 				else {
 					// Fail
 					registerCTRL_MMU |= CTRL_FAIL;
+					Processor_RaiseException(INVALIDADDRESS);
 				}
   			break;
   		default:
 				registerCTRL_MMU |= CTRL_FAIL;
+				Processor_RaiseException(INVALIDADDRESS);
 				break;
   	}
   	// registerCTRL_MMU return value was CTRL_SUCCESS or CTRL_FAIL
