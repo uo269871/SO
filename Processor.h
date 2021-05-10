@@ -31,4 +31,6 @@ char * Processor_ShowPSW();
 int Processor_GetCTRL();
 void Processor_SetCTRL(int);
 
+int Processor_GetRegisterB();
+
 #endif

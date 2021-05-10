@@ -389,8 +389,20 @@ void OperatingSystem_SaveContext(int PID) {
 void OperatingSystem_HandleException() {
   
 	// Show message "Process [executingProcessID] has generated an exception and is terminating\n"
-	OperatingSystem_ShowTime(SYSPROC);
-	ComputerSystem_DebugMessage(71,SYSPROC,executingProcessID,programList[processTable[executingProcessID].programListIndex]->executableName);
+	char * message;
+	switch(Processor_GetRegisterB()){
+		case DIVISIONBYZERO:
+			message = "division by zero";
+			break;
+		case INVALIDADDRESS:
+			message = "invalid address";
+			break;
+		case INVALIDPROCESSORMODE:
+			message = "invalid processor mode";
+			break;
+	}
+	OperatingSystem_ShowTime(INTERRUPT);
+	ComputerSystem_DebugMessage(140,INTERRUPT,executingProcessID,programList[processTable[executingProcessID].programListIndex]->executableName,message);
 	
 	OperatingSystem_TerminateProcess();
 	OperatingSystem_PrintStatus();
