@@ -5,6 +5,7 @@
 #include <stdio.h>
 
 #define SLEEPINGQUEUE
+#define MEMCONFIG "MemConfig"
 
 #define SUCCESS 1
 #define PROGRAMDOESNOTEXIST -1
@@ -18,6 +19,8 @@
 #define TOOBIGPROCESS -4
 
 #define NOPROCESS -1
+
+#define MEMORYFULL -5
 
 #define NUMBEROFQUEUES 2
 enum TypeOfReadyToRunProcessQueues { USERPROCESSQUEUE, DAEMONSQUEUE}; 

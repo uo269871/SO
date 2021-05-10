@@ -23,6 +23,7 @@ BUSDATACELL registerMBR_CPU; // Memory Buffer Register
 int registerCTRL_CPU; // Control bus Register
 
 int registerA_CPU; // General purpose register
+int registerB_CPU;
 
 int interruptLines_CPU; // Processor interrupt lines
 
@@ -113,7 +114,7 @@ void Processor_DecodeAndExecuteInstruction() {
 		// Instruction DIV
 		case DIV_INST: 
 			if (operand2 == 0)
-				Processor_RaiseInterrupt(EXCEPTION_BIT); 
+				Processor_RaiseException(DIVISIONBYZERO); 
 			else {
 				registerAccumulator_CPU=operand1 / operand2;
 				registerPC_CPU++;
@@ -186,7 +187,7 @@ void Processor_DecodeAndExecuteInstruction() {
 			if(Processor_PSW_BitState(EXECUTION_MODE_BIT) == 1){
 				Processor_ActivatePSW_Bit(POWEROFF_BIT);
 			} else{
-				Processor_RaiseInterrupt(EXCEPTION_BIT);
+				Processor_RaiseException(INVALIDPROCESSORMODE);
 			}
 			break;
 			  
@@ -204,7 +205,7 @@ void Processor_DecodeAndExecuteInstruction() {
 				Processor_UpdatePSW();
 				return;
 			} else{
-				Processor_RaiseInterrupt(EXCEPTION_BIT);
+				Processor_RaiseException(INVALIDPROCESSORMODE);
 			}
 			break; // Note: message show before... for operating system messages after...
 		// Instruction IRET
@@ -213,7 +214,7 @@ void Processor_DecodeAndExecuteInstruction() {
 				registerPC_CPU=Processor_CopyFromSystemStack(MAINMEMORYSIZE-1);
 				registerPSW_CPU=Processor_CopyFromSystemStack(MAINMEMORYSIZE-2);
 			} else{
-				Processor_RaiseInterrupt(EXCEPTION_BIT);
+				Processor_RaiseException(INVALIDPROCESSORMODE);
 			}
 			break;	
 			// Instruction MEMADD	
@@ -233,7 +234,7 @@ void Processor_DecodeAndExecuteInstruction() {
 			break;
 		// Unknown instruction
 		default : 
-			operationCode=NONEXISTING_INST;
+			Processor_RaiseException(INVALIDINSTRUCTION);
 			registerPC_CPU++;
 			break;
 	}
@@ -295,3 +296,6 @@ char * Processor_ShowPSW(){
 
 /////////////////////////////////////////////////////////
 //  New functions below this line  //////////////////////
+int Processor_GetRegisterB(){
+	return registerB_CPU;
+}

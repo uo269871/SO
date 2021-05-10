@@ -19,7 +19,7 @@ void MMU_SetCTRL (int ctrl) {
 	switch (registerCTRL_MMU) {
   	case CTRLREAD:
 			if (Processor_PSW_BitState(EXECUTION_MODE_BIT)){ // Protected mode
-				if (registerMAR_MMU < MAINMEMORYSIZE){
+				if (registerMAR_MMU < MAINMEMORYSIZE && registerMAR_MMU >= 0){
 					// Send to the main memory HW the physical address to write in
 					Buses_write_AddressBus_From_To(MMU, MAINMEMORY);
 					// Tell the main memory HW to read
@@ -30,11 +30,12 @@ void MMU_SetCTRL (int ctrl) {
 				}
 				else {
 					// Fail
+					Processor_RaiseException(INVALIDADDRESS);
 					registerCTRL_MMU |= CTRL_FAIL;
 				}
 			}
 			else // Non-Protected mode
-				if (registerMAR_MMU<registerLimit_MMU) { 
+				if (registerMAR_MMU<registerLimit_MMU && registerMAR_MMU >= 0) { 
 					// Physical address = logical address + base register
 					registerMAR_MMU+=registerBase_MMU;
 					// Send to the main memory HW the physical address to write in
@@ -43,30 +44,32 @@ void MMU_SetCTRL (int ctrl) {
 					// registerCTRL_MMU is CTRLREAD 
 					Buses_write_ControlBus_From_To(MMU,MAINMEMORY);
 					// Success
-			  	registerCTRL_MMU |= CTRL_SUCCESS;
+			  		registerCTRL_MMU |= CTRL_SUCCESS;
 				}
 				else {
-					// Fail
+					// 
+					Processor_RaiseException(INVALIDADDRESS);
 					registerCTRL_MMU |= CTRL_FAIL;
 				}
 			break;
   	case CTRLWRITE:
 			if (Processor_PSW_BitState(EXECUTION_MODE_BIT)) // Protected mode
-				if (registerMAR_MMU < MAINMEMORYSIZE) {
+				if (registerMAR_MMU < MAINMEMORYSIZE && registerMAR_MMU >= 0) {
 					// Send to the main memory HW the physical address to write in
 					Buses_write_AddressBus_From_To(MMU, MAINMEMORY);
 					// Tell the main memory HW to read
 					// registerCTRL_MMU is CTRLWRITE 
 					Buses_write_ControlBus_From_To(MMU,MAINMEMORY);
 					// Success
-			  	registerCTRL_MMU |= CTRL_SUCCESS;
+			  		registerCTRL_MMU |= CTRL_SUCCESS;
 				}
 				else {
 					// Fail
+					Processor_RaiseException(INVALIDADDRESS);
 					registerCTRL_MMU |= CTRL_FAIL;
 				}
 			else   // Non-Protected mode
-				if (registerMAR_MMU<registerLimit_MMU) {
+				if (registerMAR_MMU<registerLimit_MMU && registerMAR_MMU >= 0) {
 					// Physical address = logical address + base register
 					registerMAR_MMU+=registerBase_MMU;
 					// Send to the main memory HW the physical address to read from
@@ -75,14 +78,16 @@ void MMU_SetCTRL (int ctrl) {
 					// registerCTRL_MMU is CTRLWRITE 
 					Buses_write_ControlBus_From_To(MMU,MAINMEMORY);
 					// Success
-			  	registerCTRL_MMU |= CTRL_SUCCESS;
+			  		registerCTRL_MMU |= CTRL_SUCCESS;
 				}
 				else {
 					// Fail
+					Processor_RaiseException(INVALIDADDRESS);
 					registerCTRL_MMU |= CTRL_FAIL;
 				}
   			break;
   		default:
+				Processor_RaiseException(INVALIDADDRESS);
 				registerCTRL_MMU |= CTRL_FAIL;
 				break;
   	}
