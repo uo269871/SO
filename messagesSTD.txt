@@ -24,3 +24,4 @@
 142,Process [@G%d - %s@@] requests [@G%d@@] memory positions\n
 143,Partition [@G%d@@: @G%d@@ -> @G%d@@] has been assigned to process [@G%d - %s@@]\n
 144,@RERROR: A process could not be created from program [%s] because an appropiate partition is not available@@\n
+145,Partition [@G%d:@@ @G%d@@ -> @G%d@@] used by process [@G%d - %s@@] has been released\n

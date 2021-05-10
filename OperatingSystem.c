@@ -30,6 +30,7 @@ void OperatingSystem_MoveToTheBLOCKEDState(int);
 int OperatingSystem_IsMoreImportant(int, int);
 int OperatingSystem_CheckPartitions(int);
 void OperatingSystem_AssignPartition(int,int);
+void OperatingSystem_ReleaseMainMemory();
 
 // The process table
 PCB processTable[PROCESSTABLEMAXSIZE];
@@ -473,6 +474,8 @@ void OperatingSystem_TerminateProcess() {
 	OperatingSystem_ShowTime(SYSPROC);
 	ComputerSystem_DebugMessage(110,SYSPROC,executingProcessID,name,statesNames[state],statesNames[EXIT]);
 	
+	OperatingSystem_ReleaseMainMemory();
+
 	if (programList[processTable[executingProcessID].programListIndex]->type==USERPROGRAM) 
 		// One more user process that has terminated
 		numberOfNotTerminatedUserProcesses--;
@@ -493,6 +496,22 @@ void OperatingSystem_TerminateProcess() {
 
 	// Assign the processor to that process
 	OperatingSystem_Dispatch(selectedProcess);
+}
+
+void OperatingSystem_ReleaseMainMemory(){
+	int i;
+	OperatingSystem_ShowPartitionTable("before releasing memory");
+	for(i = 0; i < PARTITIONTABLEMAXSIZE; i++){
+		if(partitionsTable[i].PID == executingProcessID){
+			OperatingSystem_ShowTime(SYSMEM);
+			ComputerSystem_DebugMessage(145,SYSMEM,i,partitionsTable[i].initAddress,partitionsTable[i].size,
+				executingProcessID,programList[processTable[executingProcessID].programListIndex]->executableName);
+			partitionsTable[i].PID = NOPROCESS;
+			OperatingSystem_ShowPartitionTable("after releasing memory");
+			return;
+		}
+	}
+	
 }
 
 // System call management routine
