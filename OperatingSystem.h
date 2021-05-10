@@ -20,6 +20,8 @@
 
 #define NOPROCESS -1
 
+#define MEMORYFULL -5
+
 #define NUMBEROFQUEUES 2
 enum TypeOfReadyToRunProcessQueues { USERPROCESSQUEUE, DAEMONSQUEUE}; 
 

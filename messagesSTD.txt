@@ -21,3 +21,6 @@
 130,%s %d %d (PID: @G%d@@, PC: @R%d@@, Accumulator: @R%d@@, PSW: @R%x@@ [@R%s@@])\n
 140,Process [@R%d – %s@@] has caused an exception (@R%s@@) and is being terminated\n
 141,Process [@R%d – %s@@] has made an invalid system call (@R%d@@) and is being terminated\n
+142,Process [@G%d - %s@@] requests [@G%d@@] memory positions\n
+143,Partition [@G%d@@: @G%d@@ -> @G%d@@] has been assigned to process [@G%d - %s@@]\n
+144,@RERROR: A process could not be created from program [%s] because an appropiate partition is not available@@\n

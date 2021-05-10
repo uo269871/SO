@@ -19,7 +19,7 @@ void OperatingSystem_TerminateProcess();
 int OperatingSystem_LongTermScheduler();
 void OperatingSystem_PreemptRunningProcess();
 int OperatingSystem_CreateProcess(int);
-int OperatingSystem_ObtainMainMemory(int, int);
+int OperatingSystem_ObtainMainMemory(int, int, int);
 int OperatingSystem_ShortTermScheduler();
 int OperatingSystem_ExtractFromReadyToRun(int);
 void OperatingSystem_HandleException();
@@ -28,6 +28,8 @@ void OperatingSystem_PrintReadyToRunQueue();
 void OperatingSystem_HandleClockInterrupt();
 void OperatingSystem_MoveToTheBLOCKEDState(int);
 int OperatingSystem_IsMoreImportant(int, int);
+int OperatingSystem_CheckPartitions(int);
+void OperatingSystem_AssignPartition(int,int);
 
 // The process table
 PCB processTable[PROCESSTABLEMAXSIZE];
@@ -162,6 +164,10 @@ int OperatingSystem_LongTermScheduler() {
 			OperatingSystem_ShowTime(ERROR);
 			ComputerSystem_DebugMessage(105, ERROR, programList[i]->executableName);
 			break;
+		case MEMORYFULL:
+			OperatingSystem_ShowTime(ERROR);
+			ComputerSystem_DebugMessage(144, ERROR, programList[i]->executableName);
+			break;
 		default:
 			numberOfSuccessfullyCreatedProcesses++;
 			if (programList[i]->type==USERPROGRAM) 
@@ -185,7 +191,7 @@ int OperatingSystem_CreateProcess(int indexOfExecutableProgram) {
   
 	int PID;
 	int processSize;
-	int loadingPhysicalAddress;
+	int chosenPartition;
 	int priority;
 	int loadProgram;
 	FILE *programFile;
@@ -219,20 +225,20 @@ int OperatingSystem_CreateProcess(int indexOfExecutableProgram) {
 	}
 
 	// Obtain enough memory space
- 	loadingPhysicalAddress=OperatingSystem_ObtainMainMemory(processSize, PID);
-	if(loadingPhysicalAddress == TOOBIGPROCESS){
-		return TOOBIGPROCESS;
+ 	chosenPartition=OperatingSystem_ObtainMainMemory(processSize, PID, indexOfExecutableProgram);
+	if(chosenPartition < 0){
+		return chosenPartition;
 	}
 
 	// Load program in the allocated memory
-	loadProgram = OperatingSystem_LoadProgram(programFile, loadingPhysicalAddress, processSize);
+	loadProgram = OperatingSystem_LoadProgram(programFile, partitionsTable[chosenPartition].initAddress, processSize);
 	if(loadProgram == TOOBIGPROCESS){
 		return TOOBIGPROCESS;
 	}
 	
 	// PCB initialization
-	OperatingSystem_PCBInitialization(PID, loadingPhysicalAddress, processSize, priority, indexOfExecutableProgram);
-	
+	OperatingSystem_PCBInitialization(PID, partitionsTable[chosenPartition].initAddress, processSize, priority, indexOfExecutableProgram);
+	OperatingSystem_AssignPartition(PID,chosenPartition);
 	// Show message "Process [PID] created from program [executableName]\n"
 	OperatingSystem_ShowTime(INIT);
 	ComputerSystem_DebugMessage(70,INIT,PID,executableProgram->executableName);
@@ -243,7 +249,13 @@ int OperatingSystem_CreateProcess(int indexOfExecutableProgram) {
 
 // Main memory is assigned in chunks. All chunks are the same size. A process
 // always obtains the chunk whose position in memory is equal to the processor identifier
-int OperatingSystem_ObtainMainMemory(int processSize, int PID) {
+int OperatingSystem_ObtainMainMemory(int processSize, int PID, int plIndex) {
+	OperatingSystem_ShowTime(SYSMEM);
+	ComputerSystem_DebugMessage(142,SYSMEM,PID,programList[plIndex]->executableName,processSize);
+	int partition;
+	partition = OperatingSystem_CheckPartitions(processSize);
+
+	return partition;
 
  	if (processSize>MAINMEMORYSECTIONSIZE)
 		return TOOBIGPROCESS;
@@ -251,6 +263,38 @@ int OperatingSystem_ObtainMainMemory(int processSize, int PID) {
  	return PID*MAINMEMORYSECTIONSIZE;
 }
 
+int OperatingSystem_CheckPartitions(int processSize){
+	int i;
+	int partition = -1;
+	int biggestPartition = 0;
+	int freePartitions = 0;
+
+	for(i = PARTITIONTABLEMAXSIZE - 1; i >= 0 ; i--){
+		if(partitionsTable[i].size >= biggestPartition){
+			biggestPartition = partitionsTable[i].size;
+		}
+		if(processSize <= partitionsTable[i].size && partitionsTable[i].PID == NOPROCESS){
+			partition = i;
+			freePartitions++;
+		}
+	}
+
+	if(biggestPartition < processSize){
+		return TOOBIGPROCESS;
+	}
+	if(freePartitions == 0){
+		return MEMORYFULL;
+	}
+
+	return partition;
+}
+
+void OperatingSystem_AssignPartition(int PID, int partition){
+	partitionsTable[partition].PID = PID;
+	OperatingSystem_ShowTime(SYSMEM);
+	ComputerSystem_DebugMessage(143,SYSMEM,partition,partitionsTable[partition].initAddress,partitionsTable[partition].size,
+		PID,programList[processTable[PID].programListIndex]->executableName);
+}
 
 // Assign initial values to all fields inside the PCB
 void OperatingSystem_PCBInitialization(int PID, int initialPhysicalAddress, int processSize, int priority, int processPLIndex) {
