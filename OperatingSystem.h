@@ -5,6 +5,7 @@
 #include <stdio.h>
 
 #define SLEEPINGQUEUE
+#define MEMCONFIG "MemConfig"
 
 #define SUCCESS 1
 #define PROGRAMDOESNOTEXIST -1

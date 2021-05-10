@@ -64,7 +64,7 @@ int numberOfSleepingProcesses=0;
 
 // Initial set of tasks of the OS
 void OperatingSystem_Initialize(int daemonsIndex) {
-	
+	OperatingSystem_InitializePartitionTable();
 	int i, selectedProcess;
 	FILE *programFile; // For load Operating System Code
 	programFile=fopen("OperatingSystemCode", "r");
