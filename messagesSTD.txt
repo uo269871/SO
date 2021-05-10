@@ -20,3 +20,4 @@
 121,Process [@G%d – %s@@] will be thrown out of the processor by process [@G%d – %s@@]\n
 130,%s %d %d (PID: @G%d@@, PC: @R%d@@, Accumulator: @R%d@@, PSW: @R%x@@ [@R%s@@])\n
 140,Process [@R%d – %s@@] has caused an exception (@R%s@@) and is being terminated\n
+141,Process [@R%d – %s@@] has made an invalid system call (@R%d@@) and is being terminated\n

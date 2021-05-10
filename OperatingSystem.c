@@ -496,6 +496,12 @@ void OperatingSystem_HandleSystemCall() {
 			OperatingSystem_Dispatch(OperatingSystem_ShortTermScheduler());
 			OperatingSystem_PrintStatus();
 			break;
+		default:
+			OperatingSystem_ShowTime(INTERRUPT);
+			ComputerSystem_DebugMessage(141,INTERRUPT,executingProcessID,programList[processTable[executingProcessID].programListIndex]->executableName,systemCallID);
+			OperatingSystem_TerminateProcess();
+			OperatingSystem_PrintStatus();
+			break;
 	}
 }
 	
